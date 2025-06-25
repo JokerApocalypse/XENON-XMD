@@ -28,7 +28,7 @@ Automatise la gestion des commandes, la modération, la sécurité, et bien plus
 
 [![WhatsApp](https://img.shields.io/badge/Contact%20Deepak-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/2250500107362)  
 [![WhatsApp GC](https://img.shields.io/badge/Join%20Official%20GC-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://www.whatsapp.com/channel/0029VadaaRZK5cDOTh6sMD41)  
-[![YouTube](https://img.shields.io/badge/Subscribe%20Deepak-ff0000?style=for-the-badge&logo=youtube&logoColor=ff000000)](https://youtube.com/@X-TECH-CORP)  
+[![YouTube](https://img.shields.io/badge/Subscribe%20XENON-ff0000?style=for-the-badge&logo=youtube&logoColor=ff000000)](https://youtube.com/@X-TECH-CORP)  
 
 </p>
 
@@ -45,61 +45,139 @@ Automatise la gestion des commandes, la modération, la sécurité, et bien plus
 - Un éditeur de texte (VSCode recommandé)
 
 ---
+### Commandes principales
 
-### Installation manuelle
-
-```bash
-git clone https://github.com/JokerApocalypse/XENON-XMD.git
-cd XENON-XMD
-rm -rf session
-npm install
-node index.js --pairing-code
-
-Setup TERMUX / UBUNTU
-Suivre ces étapes après fork du repo et ajout des variables d’environnement dans config.env ou config.js
-
-apt update && apt -y upgrade
-apt install proot-distro
-proot-distro install ubuntu
-proot-distro login ubuntu
-apt-get update && apt-get -y full-upgrade
-apt install -y sudo git ffmpeg curl imagemagick webp
-sudo apt -y remove nodejs
-curl -fsSl https://deb.nodesource.com/setup_lts.x | sudo bash -
-sudo apt -y install nodejs
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt -y update && sudo apt -y install yarn
-sudo yarn global add pm2
----
-Puis dans le dossier du bot :
-
-yarn install --network-concurrency 1 && npm install
-node index.js --pairing-code
----
-Commandes principales
-Commande	Description	Exemple
 .connect	Connecte un numéro via pairing	.connect 22501XXXXXX
+
 .disconnect	Supprime un pairing	.disconnect 22501XXXXXX
+
 .listconnect	Liste les pairings actifs	.listconnect
+
 .encrypt	Crypte un message	.encrypt message secret
+
 .decrypt	Décrypte un message	.decrypt texte_crypte
+
 .clearchat	Supprime le chat actuel	.clearchat
+
 .readviewonce	Lit un message « view once »	.readviewonce <message>
----
-Déploiement Heroku (One-Click)
-Utilise ce bouton pour déployer facilement le bot :
 
-Buildpacks recommandés :
 
+## ` BUILDPACKS`
+
+```
 https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest
 https://github.com/DuckyTeam/heroku-buildpack-imagemagick
 https://github.com/clhuang/heroku-buildpack-webp-binaries.git
+```
 
-Remerciements ❤️
-DR XENON
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/JokerApocalypse/XENON-XMD)
 
-<p align="center"> <img src="https://profile-counter.glitch.me/{X-TECH-CORP}/count.svg" alt="Visitor Count" /> </p>
-⭐ N’oublie pas de mettre une étoile si tu kiffes ce projet !
 
-Developed with ❤️ by Dr Xenon
+## ```Donate Me```
+
+- [`GooglePay`](https://i.imgur.com/BdRa36C.jpeg)
+
+<p align="left">
+
+Scan qr code from the above button, u can pay through GooglePay, Paytm, PhonePe and FamPay.
+
+</p>
+
+---
+
+<h2 align="center">To Restart the Bot for Termux/Ubuntu</h2>
+
+```
+proot-distro login ubuntu
+cd XENON-XMD
+rm -rf session
+node index --pairing-code
+```
+
+- Star ⭐ le repo si tu aimes ce bot.
+
+[![JOIN WHATSAPP CHANNEL](https://raw.githubusercontent.com/Neeraj-x0/Neeraj-x0/main/photos/suddidina-join-whatsapp.png)](https://www.whatsapp.com/channel/0029VadaaRZK5cDOTh6sMD41)
+
+--------
+- 
+## `Scan QR Code For Session`
+[![XENON-XMD](https://repl.it/badge/github/quiec/whatsasena)](https://replit.com/@seijurolionel/PairCodeBot)
+
+  # Setup For Deployment 👇
+
+  - FORK LE REPO [Ici](https://github.com/JokerApocalypse/XENON-XMD/fork)
+
+## TERMUX/UBUNTU 
+_First Of All Fork The Repo Then You'll Be Able To Do All The Remaining Steps.Add environment variables in config.env and config.js then run
+following commands_
+
+*Use Same Command for both Termux and Ubuntu*
+```
+apt update && apt -y upgrade
+```
+```
+apt install proot-distro
+```
+```
+proot-distro install ubuntu
+```
+```
+proot-distro login ubuntu
+```
+```
+apt-get update && apt-get -y full-upgrade
+```
+```
+apt install -y sudo
+```
+```
+sudo apt -y install git ffmpeg curl imagemagick webp
+```
+```
+sudo apt -y remove nodejs
+curl -fsSl https://deb.nodesource.com/setup_lts.x | sudo bash - && sudo apt -y install nodejs
+```
+```
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - 
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt -y update && sudo apt -y install yarn
+```
+```
+sudo yarn global add pm2
+```
+
+```
+git clone https://github.com/JokerApocalypse/X-UI-V1
+```
+```
+cd Zenitsu-Bot9
+```
+```
+rm -rf session
+```
+```
+yarn install --network-concurrency 1 && npm install
+```
+```
+node index --pairing-code
+```
+
+ ---
+ 
+<h2 align="center">  To Restart the Bot for Termux/Ubuntu </h2>
+
+```
+proot-distro login ubuntu
+```
+```
+cd Zenitsu-Bot9
+```
+```
+rm -rf session
+```
+```
+node index --pairing-code
+```
+# `Thanks To❤️`
+
+- [`DR-XENON`](https://github.com/X-TECH-CORP)
