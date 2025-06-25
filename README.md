@@ -147,10 +147,10 @@ sudo yarn global add pm2
 ```
 
 ```
-git clone https://github.com/JokerApocalypse/X-UI-V1
+git clone https://github.com/JokerApocalypse/XENON-XMD/
 ```
 ```
-cd Zenitsu-Bot9
+cd XENON-XMD
 ```
 ```
 rm -rf session
@@ -170,7 +170,7 @@ node index --pairing-code
 proot-distro login ubuntu
 ```
 ```
-cd Zenitsu-Bot9
+cd XENON-XMD
 ```
 ```
 rm -rf session
